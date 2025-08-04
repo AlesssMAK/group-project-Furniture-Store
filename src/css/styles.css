@@ -4,7 +4,10 @@
   | default @import url()
   |============================
 */
+/* Modern normalize */
+@import url('./modern-normalize.css');
 
+/* Fonts */
 @import url('../font/stylesheet.css');
 
 /* Common styles */
