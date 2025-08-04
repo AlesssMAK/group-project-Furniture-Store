@@ -4,6 +4,9 @@
   | default @import url()
   |============================
 */
+
+@import url('../font/stylesheet.css');
+
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
@@ -12,7 +15,13 @@
 
 /* Sections style */
 @import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
+@import url('./hero.css');
+@import url('./furniture-list.css');
+@import url('./about-us.css');
+@import url('./FAQ.css');
+@import url('./feedback.css');
 @import url('./footer.css');
+
+/* Modal style */
+@import url('./furniture-details-modal.css');
+@import url('./order-modal.css');

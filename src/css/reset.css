@@ -25,10 +25,17 @@ a {
 
 button {
   cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+address {
+  font-style: normal;
 }
