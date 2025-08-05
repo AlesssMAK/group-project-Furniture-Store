@@ -46,9 +46,3 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'IBM Plex Sans';
-  src: url('IBMPlexSans-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
