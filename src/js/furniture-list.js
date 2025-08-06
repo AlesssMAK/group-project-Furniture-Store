@@ -9,7 +9,7 @@ const getFurnitures = async () => {
   console.log(furnitures);
 };
 
-getFurniture();
+getFurnitures();
 
 const renderFurniture = furnitures => {
   const markup = furnitures
