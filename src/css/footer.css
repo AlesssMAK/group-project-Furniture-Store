@@ -20,10 +20,6 @@
   padding-bottom: 23.94px;
 }
 
-.footer-socials-icon {
-  fill: #fff;
-}
-
 .footer-list-container {
   display: flex;
   flex-direction: column;
@@ -52,6 +48,17 @@
   font-size: 16px;
   line-height: 1.6;
   color: #fff;
+  opacity: 1;
+  transition: opacity 0.8s ease 0s;
+}
+
+.footer-nav-list-item:hover,
+.footer-nav-list-item:focus {
+  opacity: 0.5;
+}
+
+.footer-socials-icon {
+  fill: #fff;
 }
 
 .footer-socials-list {
@@ -62,6 +69,13 @@
 .footer-socials-list-item {
   width: 24px;
   height: 24px;
+  opacity: 1;
+  transition: opacity 0.8s ease 0s;
+}
+
+.footer-socials-list-item:hover,
+.footer-socials-list-item:focus {
+  opacity: 0.5;
 }
 
 .footer-socials-icon-current {
