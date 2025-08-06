@@ -1,5 +1,44 @@
 <div class="order-modal">
-    <div class="container">
-        Модальне вікно з формою замовлення
-    </div>
-</div>
+  <div class="container order-modal-window">
+    <button type="button" class="modal-window-close-btn">
+      <svg class="modal-window-close-svg" width="32" height="32">
+        <use href="../img/sprite.svg#icon-x"></use>
+      </svg>
+    </button>
+    <p class="modal-window-text">
+       Замовити зворотний зв’язок для оформлення замовлення
+    </p>
+
+        <form class="modal-window-form">
+<label class="modal-window-label" for="user-email">Email*</label>
+       
+          <input
+            id="user-email"
+            class="modal-window-input"
+            type="email"
+            name="user-email"
+            placeholder="name@server.com"
+            required
+          />
+         
+      <label class="modal-window-label" for="user-tel">Телефон*</label>
+        
+          <input
+            id="user-tel"
+            class="modal-window-input"
+            type="tel"
+            name="user-tel"
+            placeholder="+38 (067) 000 00 00"
+            required
+          />
+          
+          <label class="modal-window-label" for="user-comment">Коментар</label>
+        <textarea
+          class="modal-window-textarea"
+          id="user-comment"
+          name="user-comment"
+          placeholder="Type your message..."
+        ></textarea>
+<button class="order-modal-btn" type="button">Надіслати заявку</button>
+
+      
