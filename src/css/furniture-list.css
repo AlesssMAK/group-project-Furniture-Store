@@ -54,6 +54,12 @@
         gap: 24px;
     }
 }
+@media screen and (min-width: 1440px){
+    .menu-list-section-iv{
+        align-items: center;
+                   
+    }
+}
 
 .btn-list-section-iv{
     display: flex;
@@ -69,6 +75,12 @@
 @media screen and (min-width: 768px){
     .btn-list-section-iv{
         width: 158px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .btn-list-section-iv {
+        width: 166px;
+       
     }
 }
 
@@ -106,54 +118,82 @@
     background-position: center;
 }
 .fl-one{
-    background-image: url('../img/furniture-list-section/li1-min.jpg');
-
+    background-image:image-set( 
+        url('../img/furniture-list-section/li1-min.jpg') 1x, 
+        url('../img/furniture-list-section/li1@2x-min.jpg') 2x
+        );
 }
 .fl-two{
-    background-image: url('../img/furniture-list-section/Li2list-min.jpg');
+    background-image:image-set(
+     url('../img/furniture-list-section/Li2list-min.jpg') 1x,
+     url('../img/furniture-list-section/Li2list@2x-min.jpg') 2x
+    );
 }
 
 .fl-three{
-    background-image: url('../img/furniture-list-section/Li3list-min.jpg');
-   
+    background-image:image-set(
+         url('../img/furniture-list-section/Li3list-min.jpg') 1x,
+         url('../img/furniture-list-section/Li3list@2x-min.jpg') 2x
+         );   
 }
 .fl-for {
-    background-image: url('../img/furniture-list-section/Li4list-min.jpg');
-
+    background-image:image-set(
+         url('../img/furniture-list-section/Li4list-min.jpg') 1x,
+         url('../img/furniture-list-section/Li4list@2x-min.jpg') 2x
+         );
 }
 .fl-five{
-    background-image: url('../img/furniture-list-section/Li5list-min.jpg');
+    background-image: image-set(
+        url('../img/furniture-list-section/Li5list-min.jpg') 1x,
+        url('../img/furniture-list-section/Li5list@2x-min.jpg') 2x
+        );
 }
 
 .fl-six {
-    background-image: url('../img/furniture-list-section/li6-min.jpg');
+    background-image: image-set(
+        url('../img/furniture-list-section/li6-min.jpg') 1x,
+        url('../img/furniture-list-section/li6@2x-min.jpg') 2x);
 }
 
 .fl-sev {
-    background-image: url('../img/furniture-list-section/li7c-min.jpg');
+    background-image: image-set(
+        url('../img/furniture-list-section/li7c-min.jpg') 1x,
+        url('../img/furniture-list-section/li7@2x-min.jpg') 2x);
 }
 
 .fl-eig {
-    background-image: url('../img/furniture-list-section/li8-min.jpg');
+    background-image: image-set(
+        url('../img/furniture-list-section/li8-min.jpg') 1x,
+        url('../img/furniture-list-section/li8@2x-min.jpg') 2x);
 }
 
 .fl-nine {
-    background-image: url('../img/furniture-list-section/li9-min.jpg');
+    background-image: image-set(
+        url('../img/furniture-list-section/li9-min.jpg') 1x,
+        url('../img/furniture-list-section/li9@2x-min.jpg') 2x);
 }
 
 .fl-ten {
-    background-image: url('../img/furniture-list-section/li10-min.jpg');
+    background-image: image-set(
+        url('../img/furniture-list-section/li10-min.jpg') 1x,
+        url('../img/furniture-list-section/li10@2x-min.jpg') 2x);
 }
 
 .fl-el {
-    background-image: url('../img/furniture-list-section/li11-min.jpg');
+    background-image: image-set(
+        url('../img/furniture-list-section/li11-min.jpg') 1x,
+        url('../img/furniture-list-section/li11@2x-min.jpg') 2x);
 }
 
 .fl-tw {
-    background-image: url('../img/furniture-list-section/li12-min.jpg');
+    background-image: image-set(
+        url('../img/furniture-list-section/li12-min.jpg') 1x,
+        url('../img/furniture-list-section/li12@2x-min.jpg') 2x);
 }
 .fl-thir {
-    background-image: url('../img/furniture-list-section/li13-min.jpg');
+    background-image: image-set(
+        url('../img/furniture-list-section/li13-min.jpg') 1x,
+        url('../img/furniture-list-section/li13@2x-min.jpg') 2x);
 }
 
 .btn-load-more-list{
@@ -175,11 +215,13 @@
     color: #fff;
 }
 
-@media screen and (min-width: 768px) {
-  .menu-list-section-iv {
-    gap: 24px;
-  }
+
+@media screen and (min-width: 1440px){
+    .btn-load-more-list{
+        width: 421px;
+    }
 }
+
 
 .btn-list-section-iv {
   display: flex;
@@ -246,6 +288,7 @@
   font-size: 16px;
   line-height: 1.6;
   color: #fff;
+  margin-top: 32px;
 }
 @media screen and (min-width: 768px) {
   .btn-load-more-list {
