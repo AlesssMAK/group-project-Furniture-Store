@@ -2,6 +2,7 @@
   background-color: #6b0609;
   margin: 0 auto;
   padding-bottom: 32px;
+  max-width: 375px;
 }
 
 .footer .container {
@@ -92,6 +93,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .footer {
+    max-width: 768px;
+  }
   .footer-nav-list {
     flex-direction: row;
   }
