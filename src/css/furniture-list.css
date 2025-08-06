@@ -18,6 +18,7 @@
   color: #080c09;
   padding-bottom: 16px;
 }
+
 @media screen and (min-width: 768px) {
   .title-list-section-iv {
     font-size: 48px;
@@ -39,14 +40,141 @@
   }
 }
 
-.menu-list-section-iv {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: row;
-  gap: 16px;
+.menu-list-section-iv{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 40px;
 }
+@media screen and (min-width: 768px){
+    .menu-list-section-iv{
+        gap: 24px;
+    }
+}
+
+.btn-list-section-iv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 8px;
+    padding: 32px 16px;
+    width: 159px;
+    height: 122px;
+}
+@media screen and (min-width: 768px){
+    .btn-list-section-iv{
+        width: 158px;
+    }
+}
+
+.text-btn-list-iv{
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #fff;
+}
+@media screen and (min-width: 768px){
+    .text-btn-list-iv{
+        font-size: 20px;
+    }
+}
+
+.active-btn-iv{
+    border: 8px solid #6b0609;
+    border-radius: 8px;
+    padding: 32px 16px;
+    width: 160px;
+    height: 122px;
+}
+@media screen and (min-width: 768px){
+    .active-btn-iv {
+        width: 158px;
+    }
+}
+
+.image-btn-list-all{
+    
+    background-size: cover;
+    background-position: center;
+}
+.fl-one{
+    background-image: url('../img/furniture-list-section/li1-min.jpg');
+
+}
+.fl-two{
+    background-image: url('../img/furniture-list-section/Li2list-min.jpg');
+}
+
+.fl-three{
+    background-image: url('../img/furniture-list-section/Li3list-min.jpg');
+   
+}
+.fl-for {
+    background-image: url('../img/furniture-list-section/Li4list-min.jpg');
+
+}
+.fl-five{
+    background-image: url('../img/furniture-list-section/Li5list-min.jpg');
+}
+
+.fl-six {
+    background-image: url('../img/furniture-list-section/li6-min.jpg');
+}
+
+.fl-sev {
+    background-image: url('../img/furniture-list-section/li7c-min.jpg');
+}
+
+.fl-eig {
+    background-image: url('../img/furniture-list-section/li8-min.jpg');
+}
+
+.fl-nine {
+    background-image: url('../img/furniture-list-section/li9-min.jpg');
+}
+
+.fl-ten {
+    background-image: url('../img/furniture-list-section/li10-min.jpg');
+}
+
+.fl-el {
+    background-image: url('../img/furniture-list-section/li11-min.jpg');
+}
+
+.fl-tw {
+    background-image: url('../img/furniture-list-section/li12-min.jpg');
+}
+.fl-thir {
+    background-image: url('../img/furniture-list-section/li13-min.jpg');
+}
+
+.btn-load-more-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 8px;
+    border-radius: 100px;
+    padding: 10px 24px;
+    width: 340px;
+    height: 46px;
+    box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+    background: #6b0609;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+}
+
 @media screen and (min-width: 768px) {
   .menu-list-section-iv {
     gap: 24px;
