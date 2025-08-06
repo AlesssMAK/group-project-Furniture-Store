@@ -5,6 +5,7 @@ console.log('furniture-list');
 
 const getFurnitures = async () => {
   const { furnitures } = await fetchFurnitures();
+  
   renderFurniture(furnitures);
   console.log(furnitures);
 };
