@@ -1,20 +1,20 @@
-import { fetchFurniture } from "./furniture-store-api";
-import { refs } from "./refs";
+import { fetchFurniture } from './furniture-store-api';
+import { refs } from './refs';
 
-console.log("furniture-list");
+console.log('furniture-list');
 
 const getFurniture = async () => {
-    const { furnitures } = await fetchFurniture();
-    renderFurniture(furnitures);
-    console.log(furnitures);
-    
-}
+  const { furnitures } = await fetchFurniture();
+  renderFurniture(furnitures);
+  console.log(furnitures);
+};
 
 getFurniture();
 
-const renderFurniture = (furnitures) => {
-    const markup = furnitures.map(({ images, _id, type, price
-    }) => `
+const renderFurniture = furnitures => {
+  const markup = furnitures
+    .map(
+      ({ images, _id, type, price }) => `
     <li class="furniture-list-render-item" data-id="${_id}">
       <img class="furniture-list-render-img" src="${images[0]}" alt="${type}" />
       <h3 class="furniture-list-render-title">${type}</h3>
@@ -26,8 +26,9 @@ const renderFurniture = (furnitures) => {
         <p class="furniture-list-render-price">${price} грн</p>
         <button class="furniture-list-render-btn" type="button">Детальніше</button>
     </li>
-    `).join("");
+    `
+    )
+    .join('');
 
-    refs.furnitureList.innerHTML = markup;
-}
-
+  refs.furnitureList.innerHTML = markup;
+};
