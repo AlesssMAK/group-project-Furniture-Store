@@ -22,7 +22,7 @@ const api = axios.create({
 });
 
 // меблі
-export async function getFurnitures(page = 1, limit = 10) {
+export async function fetchFurnitures(page = 1, limit = 8) {
   try {
     const response = await api.get(ENDPOINTS.FURNITURES, {
       params: { page, limit },
@@ -40,7 +40,7 @@ export async function getFurnitures(page = 1, limit = 10) {
 }
 
 // категорії
-export async function getCategories() {
+export async function fetchCategories() {
   try {
     const response = await api.get(ENDPOINTS.CATEGORIES);
     return response.data;
@@ -57,7 +57,7 @@ export async function getCategories() {
 }
 
 //  Відгуки
-export async function getFeedbacks(page = 1, limit = 10) {
+export async function fetchFeedbacks(page = 1, limit = 3) {
   try {
     const response = await api.get(ENDPOINTS.FEEDBACKS, {
       params: { page, limit },
