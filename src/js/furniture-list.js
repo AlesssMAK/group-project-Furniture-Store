@@ -1,10 +1,10 @@
-import { fetchFurniture } from './furniture-store-api';
+import { fetchFurnitures } from './furniture-store-api';
 import { refs } from './refs';
 
 console.log('furniture-list');
 
-const getFurniture = async () => {
-  const { furnitures } = await fetchFurniture();
+const getFurnitures = async () => {
+  const { furnitures } = await fetchFurnitures();
   renderFurniture(furnitures);
   console.log(furnitures);
 };
