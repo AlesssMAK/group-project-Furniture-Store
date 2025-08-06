@@ -3,12 +3,6 @@
     background-color: #f0e6e6;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .about-content {
     display: flex;
     flex-direction: column;
