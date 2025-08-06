@@ -114,6 +114,12 @@
     line-height: 1.6;
     color: #fff;
 }
+@media screen and (min-width: 768px){
+    .btn-load-more-list{
+        margin: 0 auto;
+    }
+}
+
 .btn-load-more-list:hover,
    .btn-load-more-list:hover{
                 box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
