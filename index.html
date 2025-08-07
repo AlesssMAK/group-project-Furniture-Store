@@ -7,7 +7,7 @@
     <title>Меблерія</title>
 
     <script type="module" crossorigin src="/group-project-Furniture-Store/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-B7ikqIBN.js">
+    <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-T0aOC-0K.js">
     <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/vendor-JyzU0S79.css">
     <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-B6snP_9c.css">
   </head>
@@ -54,7 +54,7 @@
         <li>
           <button
             type="button"
-            class="image-btn-list-all fl-one btn-list-section-iv" 
+            class="image-btn-list-all fl-one btn-list-section-iv"
           >
             <span class="text-btn-list-iv">Всі товари</span>
           </button>
@@ -62,7 +62,7 @@
         <li>
           <button
             type="button"
-            class="image-btn-list-all fl-two btn-list-section-iv" 
+            class="image-btn-list-all fl-two btn-list-section-iv"
             data-id="66504a50a1b2c3d4e5f6a7b8"
           >
             <span class="text-btn-list-iv">М'які меблі</span>
@@ -169,12 +169,14 @@
         </li>
       </ul>
 
-      <ul class="furniture-list-render"></ul>
       <div id="loader" class="loader hidden" aria-label="Завантаження меблів">
         <span class="loader-icon">🛋️</span>
         <p class="loader-text">Завантаження меблів...</p>
       </div>
-      <button type="button" class="btn-load-more-list">Показати ще</button>
+      <ul class="furniture-list-render"></ul>
+      <button type="button" class="btn-load-more-list hidden">
+        Показати ще
+      </button>
     </div>
   </div>
 </section>
@@ -264,10 +266,12 @@
 </footer>
 
 
-    <div class="furniture-details-modal container">
-  <div class="furniture-modal-content">
-    <button class="modal-furnt-close-btn" type="button"></button>
-    <div class="furniture-modal-product" id="productModalContainer"></div>
+    <div class="furniture-details-modal">
+  <div class="container">
+    <div class="furniture-modal-content">
+      <button class="modal-furnt-close-btn" type="button"></button>
+      <div class="furniture-modal-product" id="productModalContainer"></div>
+    </div>
   </div>
 </div>
 
