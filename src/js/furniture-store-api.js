@@ -100,3 +100,20 @@ export async function createOrder(orderInfo) {
     return null;
   }
 }
+
+// furniture details modal 
+
+export const fetchProductModal = async productId => {
+  try {
+    const response = await api.get(ENDPOINTS.FURNITURES);
+    const products = response.data.furnitures;
+    const product = products.find(item => item._id === productId);
+    return product;
+  } catch (error) {
+    iziToast.error({
+      title: 'Error',
+      message: 'Не вдалося завантажити дані товару',
+    });
+    throw error;
+  }
+};
