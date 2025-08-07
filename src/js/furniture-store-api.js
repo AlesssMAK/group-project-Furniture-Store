@@ -38,6 +38,24 @@ export async function fetchFurnitures(page = 1, limit = 8) {
     return null;
   }
 }
+//меблі за категорією
+export async function fetchFurnituresByCategory(category, page = 1, limit = 8) {
+  try {
+    const response = await api.get(ENDPOINTS.FURNITURES, {
+      params: {category, page, limit },
+    });
+    return response.data;
+  } catch (error) {
+    iziToast.error({
+      title: 'Помилка',
+      message: 'Не вдалося завантажити меблі. Спробуйте пізніше.',
+      position: 'topRight',
+      timeout: 4000,
+    });
+    return null;
+  }
+}
+
 
 // категорії
 export async function fetchCategories() {
