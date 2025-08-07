@@ -7,9 +7,9 @@
     <title>Меблерія</title>
 
     <script type="module" crossorigin src="/group-project-Furniture-Store/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-C_6HI8ht.js">
+    <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-0_PbKLAl.js">
     <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/vendor-JyzU0S79.css">
-    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-B8MfIs8T.css">
+    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-CkIewmaW.css">
   </head>
   <body>
     <header class="container header">
@@ -314,7 +314,47 @@
   </div>
 </section>
       <section class="feedback-section" id="feedback">
-  <div class="container">Відгуки</div>
+  <div class="container">
+    <h2 class="feedback-title">Відгуки Клієнтів</h2>
+    <p class="feedback-subtitle">
+      Дізнайтеся, що кажуть наші задоволені клієнти про наші меблі
+    </p>
+
+    <!-- Лоадер -->
+    <div id="feedback-loader" class="feedback-loader visually-hidden">
+      <span class="loader"></span>
+    </div>
+
+    <!-- Swiper -->
+    <div class="feedback-swiper swiper">
+      <div id="feedback-list" class="swiper-wrapper">
+        <!-- Картки з відгуками будуть динамічно вставлятись через JS -->
+      </div>
+
+      <!-- Пагінація -->
+      <div class="swiper-pagination"></div>
+
+      <!-- Кнопки навігації -->
+      <button
+        class="swiper-button-prev"
+        type="button"
+        aria-label="Попередній відгук"
+      >
+        <svg class="arrow-icon" width="24" height="24">
+          <use href="./img/icons.svg#icon-arrow-left"></use>
+        </svg>
+      </button>
+      <button
+        class="swiper-button-next"
+        type="button"
+        aria-label="Наступний відгук"
+      >
+        <svg class="arrow-icon" width="24" height="24">
+          <use href="./img/icons.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 </section>
 
     </main>
