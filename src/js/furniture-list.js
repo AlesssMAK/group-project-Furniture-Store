@@ -37,3 +37,30 @@ async function loadFurniture() {
 }
 
 loadFurniture();
+
+//  Клік по категорії ===
+document.addEventListener('DOMContentLoaded', () => {
+  refs.categoriesList.addEventListener("click", handleCategoryClick);
+  activeFirstBtn();
+});
+
+export const handleCategoryClick = async e => {
+  const clickedBtn = e.target.closest(".btn-list-section-iv");
+  if (!clickedBtn) return;
+  highlightActiveCategory(clickedBtn);
+};
+
+export const activeFirstBtn = () => {
+  const firstBtn = document.querySelector('.btn-list-section-iv');
+  if (firstBtn) {
+    highlightActiveCategory(firstBtn);
+  }
+  
+};
+// Підсвітка активної категорії ===
+
+export const highlightActiveCategory = (activeButton) => {
+  document.querySelectorAll('.btn-list-section-iv').forEach(btn => btn.classList.remove('active-btn-iv'));
+  activeButton.classList.add('active-btn-iv');
+};
+
