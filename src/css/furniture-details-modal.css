@@ -89,7 +89,7 @@
   .gallery__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16;
+    gap: 16px;
   }
   
   .gallery__row .gallery__item {

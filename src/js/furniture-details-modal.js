@@ -26,7 +26,7 @@ export const openModal = productId => {
   document.body.style.overflow = 'hidden';
   window.addEventListener('keydown', clickEscPress);
   refs.productModal.addEventListener('click', clickBackdropClick);
-  setCurrentProduct(productId);
+//   setCurrentProduct(productId);
 };
 
 export const closeModal = () => {
