@@ -4,6 +4,7 @@ export const refs = {
     productMadalContainer: document.querySelector('.furniture-modal-product'),
     modalOrderBtn: document.querySelector('.order-btn'),
     modalCloseBtn: document.querySelector(".modal-furnt-close-btn"),
-    categoriesList: document.querySelector(".menu-list-section-iv")
+    categoriesList: document.querySelector(".menu-list-section-iv"),
+    loadMoreListBtn: document.querySelector(".btn-load-more-list"),
 }
 
