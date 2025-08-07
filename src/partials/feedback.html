@@ -1,3 +1,43 @@
 <section class="feedback-section" id="feedback">
-  <div class="container">Відгуки</div>
+  <div class="container">
+    <h2 class="feedback-title">Відгуки Клієнтів</h2>
+    <p class="feedback-subtitle">
+      Дізнайтеся, що кажуть наші задоволені клієнти про наші меблі
+    </p>
+
+    <!-- Лоадер -->
+    <div id="feedback-loader" class="feedback-loader visually-hidden">
+      <span class="loader"></span>
+    </div>
+
+    <!-- Swiper -->
+    <div class="feedback-swiper swiper">
+      <div id="feedback-list" class="swiper-wrapper">
+        <!-- Картки з відгуками будуть динамічно вставлятись через JS -->
+      </div>
+
+      <!-- Пагінація -->
+      <div class="swiper-pagination"></div>
+
+      <!-- Кнопки навігації -->
+      <button
+        class="swiper-button-prev"
+        type="button"
+        aria-label="Попередній відгук"
+      >
+        <svg class="arrow-icon" width="24" height="24">
+          <use href="./img/icons.svg#icon-arrow-left"></use>
+        </svg>
+      </button>
+      <button
+        class="swiper-button-next"
+        type="button"
+        aria-label="Наступний відгук"
+      >
+        <svg class="arrow-icon" width="24" height="24">
+          <use href="./img/icons.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 </section>
