@@ -1,12 +1,37 @@
-<header class="header">
-  <div class="container">
-    верхня частина сторінки, що містить логотип та блок навігації
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="./img/logo.svg"></use>
-        </svg>
-      </a>
+<header class="container header">
+<a href="#hero" class="logo">Меблерія</a>
+
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="#furniture" class="nav-link">Наші меблі</a></li>
+      <li><a href="#about" class="nav-link">Про нас</a></li>
+      <li><a href="#faq" class="nav-link">FAQ</a></li>
+      <li><a href="#reviews" class="nav-link">Відгуки</a></li>
+    </ul>
+  </nav>
+
+  <a href="#furniture" class="btn-buy">До покупок</a>
+
+  <button class="burger" aria-label="Відкрити меню" aria-expanded="false">
+  <span class="burger-line"></span>
+  <span class="burger-line"></span>
+  <span class="burger-line"></span>
+  </button>
+  <div class=" mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <a href="#hero" class="logo">Меблерія</a>
+      <button class="close" aria-label="Закрити меню">×</button>
+    </div>
+    <nav>
+      <ul class="mobile-nav-list">
+        <li><a href="#furniture" class="mobile-nav-link">Наші меблі</a></li>
+        <li><a href="#about" class="mobile-nav-link">Про нас</a></li>
+        <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+        <li><a href="#reviews" class="mobile-nav-link">Відгуки</a></li>
+      </ul>
+      <a href="#furniture" class="btn-buy-mobile">До покупок</a>
     </nav>
   </div>
+  
 </header>
+  
