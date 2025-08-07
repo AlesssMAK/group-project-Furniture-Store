@@ -22,10 +22,13 @@ const api = axios.create({
 });
 
 // меблі
-export async function fetchFurnitures(page = 1, limit = 8) {
+export const fetchFurnitures = async (page) => {
   try {
     const response = await api.get(ENDPOINTS.FURNITURES, {
-      params: { page, limit },
+      params: {
+        page,
+        limit: 8,
+      },
     });
     return response.data;
   } catch (error) {
@@ -39,10 +42,14 @@ export async function fetchFurnitures(page = 1, limit = 8) {
   }
 }
 //меблі за категорією
-export async function fetchFurnituresByCategory(category, page = 1, limit = 8) {
+export const fetchFurnituresByCategory = async (category, page = 1) => {
   try {
     const response = await api.get(ENDPOINTS.FURNITURES, {
-      params: {category, page, limit },
+      params: {
+        category,
+        page,
+        limit: 8,
+      },
     });
     return response.data;
   } catch (error) {
@@ -58,7 +65,7 @@ export async function fetchFurnituresByCategory(category, page = 1, limit = 8) {
 
 
 // категорії
-export async function fetchCategories() {
+export const fetchCategories = async () => {
   try {
     const response = await api.get(ENDPOINTS.CATEGORIES);
     return response.data;
@@ -75,7 +82,7 @@ export async function fetchCategories() {
 }
 
 //  Відгуки
-export async function fetchFeedbacks(page = 1, limit = 3) {
+export const fetchFeedbacks = async (page = 1, limit = 3) => {
   try {
     const response = await api.get(ENDPOINTS.FEEDBACKS, {
       params: { page, limit },
@@ -93,7 +100,7 @@ export async function fetchFeedbacks(page = 1, limit = 3) {
 }
 
 // Нове замовлення
-export async function createOrder(orderInfo) {
+export const createOrder = async (orderInfo) => {
   try {
     const response = await api.post(ENDPOINTS.ORDERS, orderInfo);
 
