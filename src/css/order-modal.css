@@ -5,10 +5,15 @@
   background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
   top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+   align-items: center; 
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: all 0.8s ease 0s;
+  padding: 64px, 20px;
 }
 
 .order-modal.is-open {
@@ -19,15 +24,12 @@
 
 
 .order-modal-window {
-  flex-wrap: wrap;
-  min-width: 335px;
+    min-width: 335px;
+    max-width: 90%;
   border-radius: 8px;
   
   background: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+ 
   padding-top: 64px;
   padding-bottom: 64px;
   padding-left: 20px;
