@@ -9,7 +9,7 @@
     <script type="module" crossorigin src="/group-project-Furniture-Store/index.js"></script>
     <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-0_PbKLAl.js">
     <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/vendor-JyzU0S79.css">
-    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-BYEyzVxQ.css">
+    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-BMAxEEXL.css">
   </head>
   <body>
     <header class="container header">
@@ -57,6 +57,10 @@
   
 </header>
   
+    <div id="loader" class="loader hidden" aria-label="Завантаження...">
+  <div class="spinner"></div>
+  <p class="loader-text">Завантаження сторінки...</p>
+</div>
 
     <main>
       <!-- Loads the specified .html file -->
@@ -201,10 +205,6 @@
         </li>
       </ul>
 
-      <div id="loader" class="loader hidden" aria-label="Завантаження меблів">
-        <span class="loader-icon">🛋️</span>
-        <p class="loader-text">Завантаження меблів...</p>
-      </div>
       <ul class="furniture-list-render"></ul>
       <button type="button" class="btn-load-more-list hidden">
         Показати ще
