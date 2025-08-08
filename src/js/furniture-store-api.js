@@ -22,10 +22,34 @@ const api = axios.create({
 });
 
 // меблі
-export async function fetchFurnitures(page = 1, limit = 8) {
+export const fetchFurnitures = async (page) => {
   try {
     const response = await api.get(ENDPOINTS.FURNITURES, {
-      params: { page, limit },
+      params: {
+        page,
+        limit: 8,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    iziToast.error({
+      title: 'Помилка',
+      message: 'Не вдалося завантажити меблі. Спробуйте пізніше.',
+      position: 'topRight',
+      timeout: 4000,
+    });
+    return null;
+  }
+}
+//меблі за категорією
+export const fetchFurnituresByCategory = async (category, page = 1) => {
+  try {
+    const response = await api.get(ENDPOINTS.FURNITURES, {
+      params: {
+        category,
+        page,
+        limit: 8,
+      },
     });
     return response.data;
   } catch (error) {
@@ -39,8 +63,9 @@ export async function fetchFurnitures(page = 1, limit = 8) {
   }
 }
 
+
 // категорії
-export async function fetchCategories() {
+export const fetchCategories = async () => {
   try {
     const response = await api.get(ENDPOINTS.CATEGORIES);
     return response.data;
@@ -57,7 +82,7 @@ export async function fetchCategories() {
 }
 
 //  Відгуки
-export async function fetchFeedbacks(page = 1, limit = 3) {
+export const fetchFeedbacks = async (page = 1, limit = 3) => {
   try {
     const response = await api.get(ENDPOINTS.FEEDBACKS, {
       params: { page, limit },
@@ -75,7 +100,7 @@ export async function fetchFeedbacks(page = 1, limit = 3) {
 }
 
 // Нове замовлення
-export async function createOrder(orderInfo) {
+export const createOrder = async (orderInfo) => {
   try {
     const response = await api.post(ENDPOINTS.ORDERS, orderInfo);
 
@@ -100,3 +125,20 @@ export async function createOrder(orderInfo) {
     return null;
   }
 }
+
+// furniture details modal 
+
+export const fetchProductModal = async productId => {
+  try {
+    const response = await api.get(ENDPOINTS.FURNITURES);
+    const products = response.data.furnitures;
+    const product = products.find(item => item._id === productId);
+    return product;
+  } catch (error) {
+    iziToast.error({
+      title: 'Error',
+      message: 'Не вдалося завантажити дані товару',
+    });
+    throw error;
+  }
+};

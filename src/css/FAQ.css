@@ -1,0 +1,70 @@
+.faq-section {
+  padding: 80px 0;
+}
+
+.faq-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-section .secondary-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.accordion-container {
+  max-width: 865px;
+}
+
+.ac {
+  border: none !important;
+  padding: 23px 0;
+  border-top: 1px solid rgba(8, 12, 9, 0.15) !important;
+  margin-bottom: 0 !important;
+}
+
+.ac:last-child {
+    border-bottom: 1px solid rgba(8, 12, 9, 0.15) !important;
+}
+
+.ac-trigger {
+  font-family: 'Raleway Normal' !important;
+  font-size: 16px !important;
+  line-height: 160% !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.ac-trigger .ac-trigger-icon {
+    transition: transform 250ms cubic-bezier(0.77,0,0.18,1);
+}
+.ac.is-active  .ac-trigger .ac-trigger-icon {
+    transform: rotate(-180deg);
+}
+
+.ac-text {
+  font-family: 'Raleway Normal' !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 160% !important;
+}
+
+@media only screen and (min-width: 768px) {
+ .ac {
+        padding: 21.5px 0;
+    }
+
+  .ac-trigger {
+  font-size: 18px !important;
+}
+
+.ac-text {
+  font-size: 18px !important;
+}
+}
+
