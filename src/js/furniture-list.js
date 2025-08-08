@@ -22,7 +22,7 @@ const loadFurniture = async () => {
   showLoader();
   const { furnitures, totalItems } = await fetchFurnitures(currentPage);
   hideLoader();
-  hideLoadMoreListBtn();
+  // hideLoadMoreListBtn();
 
   renderFurniture(furnitures);
 
@@ -65,8 +65,25 @@ export const handleLoadMoreListClick = async () => {
   }
 };
 
+
+async function loadFurnitureByCategory(category) {
+  showLoader();
+  const data = await fetchFurnituresByCategory(category);
+  hideLoader();
+
+  if (data && data.furnitures) {
+        hideLoadMoreListBtn();
+    renderFurniture(data.furnitures);
+  } else {
+            hideLoadMoreListBtn();
+    refs.furnitureList.innerHTML = '<p>Не вдалося завантажити меблі.</p>';
+  }
+}
+
 export const handleCategoryClick = async e => {
   const clickedBtn = e.target.closest('.btn-list-section-iv');
+  console.log(clickedBtn);
+  
   if (!clickedBtn) return;
   highlightActiveCategory(clickedBtn);
   loadFurnitureByCategory(clickedBtn.dataset.id);

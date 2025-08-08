@@ -16,4 +16,5 @@ export const showLoadMoreListBtn = () => {
 
 export const hideLoadMoreListBtn = () => {
   refs.loadMoreListBtn.classList.add('hidden');
+  
 };

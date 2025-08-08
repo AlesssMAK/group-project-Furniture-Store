@@ -1,5 +1,5 @@
 import iziToast from 'izitoast';
-import { fetchProductModal, getLocalProductById } from './furniture-store-api';
+import { getLocalProductById } from './furniture-store-api';
 import { refs } from './refs';
 import { renderProductModal } from './render-function';
 
