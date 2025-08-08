@@ -33,11 +33,20 @@
     justify-content: center;
 }
 
+.swiper-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.swaper-btn-subbox {
+    display: flex;
+    gap: 16px;
+}
+
 .swiper-slide {
     padding: 24px;
     height: auto;
     margin: 0 auto;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
     text-align: left;
         background: #fff;
             text-align: left;
@@ -86,34 +95,38 @@
 /* === Кнопки навігації Swiper === */
 .swiper-button-prev,
 .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    width: 44px;
-    height: 44px;
-    transform: translateY(-50%);
-    background-color: #f3f5f6;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    z-index: 10;
+    background-color: #f2f2f2;
+    border: 1px solid rgba(8, 12, 9, 0.15);
+    border-radius: 100px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 250ms ease;
-    color: #080C09;
+    transition: border 0.3s ease, background-color 0.3s ease, fill 0.3s ease, opacity 0.3s ease;
 }
-
 .swiper-button-prev:hover,
 .swiper-button-next:hover,
 .swiper-button-prev:focus,
 .swiper-button-next:focus {
-    background-color: #e0e0e0;
+    border: none;
+    background-color: #975052;
+    fill: #fff;
 }
 
-.swiper-button-prev[disabled],
-.swiper-button-next[disabled] {
+.swiper-button-prev:active,
+.swiper-button-next:active {
+    border: none;
+    background-color: #6b0609;
+    ;
+    fill: #fff;
+}
+
+.swiper-button-prev:disabled,
+.swiper-button-next:disabled {
     opacity: 0.3;
-    cursor: not-allowed;
+    cursor: default;
+    pointer-events: none;
 }
 
 .swiper-button-prev {
