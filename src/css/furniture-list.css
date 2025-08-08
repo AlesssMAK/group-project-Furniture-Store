@@ -71,6 +71,7 @@
     padding: 32px 16px;
     width: 159px;
     height: 122px;
+    
 }
 @media screen and (min-width: 768px){
     .btn-list-section-iv{
@@ -116,84 +117,98 @@
     
     background-size: cover;
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-.fl-one{
-    background-image:image-set( 
-        url('../img/furniture-list-section/li1-min.jpg') 1x, 
-        url('../img/furniture-list-section/li1@2x-min.jpg') 2x
-        );
-}
-.fl-two{
-    background-image:image-set(
-     url('../img/furniture-list-section/Li2list-min.jpg') 1x,
-     url('../img/furniture-list-section/Li2list@2x-min.jpg') 2x
-    );
+.fl-one {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/li1-min.jpg') 1x,
+      url('../img/furniture-list-section/li1@2x-min.jpg') 2x);
 }
 
-.fl-three{
-    background-image:image-set(
-         url('../img/furniture-list-section/Li3list-min.jpg') 1x,
-         url('../img/furniture-list-section/Li3list@2x-min.jpg') 2x
-         );   
+.fl-two {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/Li2list-min.jpg') 1x,
+      url('../img/furniture-list-section/Li2list@2x-min.jpg') 2x);
 }
+
+.fl-three {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/Li3list-min.jpg') 1x,
+      url('../img/furniture-list-section/Li3list@2x-min.jpg') 2x);
+}
+
 .fl-for {
-    background-image:image-set(
-         url('../img/furniture-list-section/Li4list-min.jpg') 1x,
-         url('../img/furniture-list-section/Li4list@2x-min.jpg') 2x
-         );
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/Li4list-min.jpg') 1x,
+      url('../img/furniture-list-section/Li4list@2x-min.jpg') 2x);
 }
-.fl-five{
-    background-image: image-set(
-        url('../img/furniture-list-section/Li5list-min.jpg') 1x,
-        url('../img/furniture-list-section/Li5list@2x-min.jpg') 2x
-        );
+
+.fl-five {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/Li5list-min.jpg') 1x,
+      url('../img/furniture-list-section/Li5list@2x-min.jpg') 2x);
 }
 
 .fl-six {
-    background-image: image-set(
-        url('../img/furniture-list-section/li6-min.jpg') 1x,
-        url('../img/furniture-list-section/li6@2x-min.jpg') 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/li6-min.jpg') 1x,
+      url('../img/furniture-list-section/li6@2x-min.jpg') 2x);
 }
 
 .fl-sev {
-    background-image: image-set(
-        url('../img/furniture-list-section/li7c-min.jpg') 1x,
-        url('../img/furniture-list-section/li7@2x-min.jpg') 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/li7c-min.jpg') 1x,
+      url('../img/furniture-list-section/li7@2x-min.jpg') 2x);
 }
 
 .fl-eig {
-    background-image: image-set(
-        url('../img/furniture-list-section/li8-min.jpg') 1x,
-        url('../img/furniture-list-section/li8@2x-min.jpg') 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/li8-min.jpg') 1x,
+      url('../img/furniture-list-section/li8@2x-min.jpg') 2x);
 }
 
 .fl-nine {
-    background-image: image-set(
-        url('../img/furniture-list-section/li9-min.jpg') 1x,
-        url('../img/furniture-list-section/li9@2x-min.jpg') 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/li9-min.jpg') 1x,
+      url('../img/furniture-list-section/li9@2x-min.jpg') 2x);
 }
 
 .fl-ten {
-    background-image: image-set(
-        url('../img/furniture-list-section/li10-min.jpg') 1x,
-        url('../img/furniture-list-section/li10@2x-min.jpg') 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/li10-min.jpg') 1x,
+      url('../img/furniture-list-section/li10@2x-min.jpg') 2x);
 }
 
 .fl-el {
-    background-image: image-set(
-        url('../img/furniture-list-section/li11-min.jpg') 1x,
-        url('../img/furniture-list-section/li11@2x-min.jpg') 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/li11-min.jpg') 1x,
+      url('../img/furniture-list-section/li11@2x-min.jpg') 2x);
 }
 
 .fl-tw {
-    background-image: image-set(
-        url('../img/furniture-list-section/li12-min.jpg') 1x,
-        url('../img/furniture-list-section/li12@2x-min.jpg') 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/li12-min.jpg') 1x,
+      url('../img/furniture-list-section/li12@2x-min.jpg') 2x);
 }
+
 .fl-thir {
-    background-image: image-set(
-        url('../img/furniture-list-section/li13-min.jpg') 1x,
-        url('../img/furniture-list-section/li13@2x-min.jpg') 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/furniture-list-section/li13-min.jpg') 1x,
+      url('../img/furniture-list-section/li13@2x-min.jpg') 2x);
 }
 
 .btn-load-more-list{
