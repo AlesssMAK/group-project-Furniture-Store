@@ -1,4 +1,5 @@
 import { fetchProductModal } from './furniture-store-api';
+import { openOrderModal } from './order-modal';
 import { refs } from './refs';
 import { renderProductModal } from './render-function';
 
@@ -55,6 +56,8 @@ export async function onProductModalClick(event) {
     } catch (error) {
       console.error('Не вдалося отримати дані товару:', error);
     }
+
+    openOrderModal();
   }
   refs.furnitureList.addEventListener('click', onProductModalClick);
 

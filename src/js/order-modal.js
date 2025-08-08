@@ -7,7 +7,7 @@ const formModalOrder = document.querySelector ('.modal-window-form')
 
 let selectedProductId = null;
 
-function openModal() {
+export function openOrderModal() {
 selectedProductId = productId;
   orderModal.style.display = "block";
   orderModal.classList.add("is-open")
