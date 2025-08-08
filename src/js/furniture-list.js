@@ -1,6 +1,5 @@
 import { fetchFurnitures } from './furniture-store-api';
 import { refs } from './refs';
-import { showLoader, hideLoader } from './loader';
 
 const renderFurniture = furnitures => {
   const markup = furnitures
@@ -23,17 +22,3 @@ const renderFurniture = furnitures => {
 
   refs.furnitureList.innerHTML = markup;
 };
-
-async function loadFurniture() {
-  showLoader();
-  const data = await fetchFurnitures();
-  hideLoader();
-
-  if (data && data.furnitures) {
-    renderFurniture(data.furnitures);
-  } else {
-    refs.furnitureList.innerHTML = '<p>Не вдалося завантажити меблі.</p>';
-  }
-}
-
-loadFurniture();

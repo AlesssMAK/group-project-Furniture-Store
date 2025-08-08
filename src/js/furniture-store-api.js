@@ -1,6 +1,7 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import { showLoader, hideLoader } from './loader.js';
 
 // API
 export const BASE_URL = 'https://furniture-store.b.goit.study/api';
@@ -23,6 +24,7 @@ const api = axios.create({
 
 // меблі
 export async function fetchFurnitures(page = 1, limit = 8) {
+  showLoader();
   try {
     const response = await api.get(ENDPOINTS.FURNITURES, {
       params: { page, limit },
@@ -36,11 +38,14 @@ export async function fetchFurnitures(page = 1, limit = 8) {
       timeout: 4000,
     });
     return null;
+  } finally {
+    hideLoader();
   }
 }
 
 // категорії
 export async function fetchCategories() {
+  showLoader();
   try {
     const response = await api.get(ENDPOINTS.CATEGORIES);
     return response.data;
@@ -53,11 +58,14 @@ export async function fetchCategories() {
       timeout: 4000,
     });
     return null;
+  } finally {
+    hideLoader();
   }
 }
 
 //  Відгуки
 export async function fetchFeedbacks(page = 1, limit = 3) {
+  showLoader();
   try {
     const response = await api.get(ENDPOINTS.FEEDBACKS, {
       params: { page, limit },
@@ -71,11 +79,14 @@ export async function fetchFeedbacks(page = 1, limit = 3) {
       timeout: 4000,
     });
     return null;
+  } finally {
+    hideLoader();
   }
 }
 
 // Нове замовлення
 export async function createOrder(orderInfo) {
+  showLoader();
   try {
     const response = await api.post(ENDPOINTS.ORDERS, orderInfo);
 
@@ -98,5 +109,7 @@ export async function createOrder(orderInfo) {
       timeout: 4000,
     });
     return null;
+  } finally {
+    hideLoader();
   }
 }
