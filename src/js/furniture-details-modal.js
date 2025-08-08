@@ -63,5 +63,13 @@ refs.modalCloseBtn.addEventListener('click', closeModal);
   
 
 
-// повісити слухача подіі на кнопку у модальці, щоб відкривалася інша модалка для замовлення товару
+// повісила слухача модалку кнопка "замовити"
 
+
+document.addEventListener("click", event => {
+    const orderBtn = event.target.closest('.order-btn');
+    if(!orderBtn) return;
+    closeModal()
+    refs.orderModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+})
