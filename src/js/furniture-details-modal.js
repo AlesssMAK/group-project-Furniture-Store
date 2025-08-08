@@ -1,13 +1,8 @@
-import { fetchProductModal } from './furniture-store-api';
+import iziToast from 'izitoast';
+import { fetchProductModal, getLocalProductById } from './furniture-store-api';
 import { refs } from './refs';
 import { renderProductModal } from './render-function';
 
-
-// let currentProductId = null;
-
-// const setCurrentProduct = productId => {
-//   currentProductId = productId;
-// };
 
 const clickEscPress = event => {
   if (event.code === 'Escape') {
@@ -39,26 +34,33 @@ export const closeModal = () => {
 refs.modalCloseBtn.addEventListener('click', closeModal);
 
 // on click callback function
-
-export async function onProductModalClick(event) {
+  
+    export async function onProductModalClick(event) {
     const detailBtn = event.target.closest('.furniture-list-render-btn');
     if (!detailBtn) return;
   
     const card = detailBtn.closest('.furniture-list-render-item');
     const productId = card?.dataset.id;
+    
     if (!productId) return;
   
-    try {
-      const data = await fetchProductModal(productId); 
-      renderProductModal(data); 
-      openModal();
-    } catch (error) {
-      console.error('Не вдалося отримати дані товару:', error);
+    const product = getLocalProductById(productId);
+  
+    if (!product) {
+      iziToast.error({
+        title: 'Error',
+        message: 'Товар не знайдено у кеші',
+      });
+      return;
     }
+  
+    renderProductModal(product);
+    openModal();
   }
+
+
   refs.furnitureList.addEventListener('click', onProductModalClick);
-
-
+  
 
 
 // повісити слухача подіі на кнопку у модальці, щоб відкривалася інша модалка для замовлення товару

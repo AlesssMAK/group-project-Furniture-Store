@@ -128,17 +128,24 @@ export const createOrder = async (orderInfo) => {
 
 // furniture details modal 
 
-export const fetchProductModal = async productId => {
+let localProducts = [];
+
+export const setLocalProducts = products => {
+  localProducts = products;
+};
+
+export const getLocalProductById = id => {
+  return localProducts.find(p => p._id === id);
+};
+
+export const fetchProductModal = async () => {
   try {
     const response = await api.get(ENDPOINTS.FURNITURES);
     const products = response.data.furnitures;
-    const product = products.find(item => item._id === productId);
-    return product;
+    setLocalProducts(products);
+    return products;
   } catch (error) {
-    iziToast.error({
-      title: 'Error',
-      message: 'Не вдалося завантажити дані товару',
-    });
+    iziToast.error({ title: 'Error', message: 'Не вдалося завантажити товари' });
     throw error;
   }
 };
