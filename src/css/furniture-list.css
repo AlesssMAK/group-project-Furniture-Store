@@ -40,203 +40,25 @@
   }
 }
 
-.menu-list-section-iv{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 16px;
-    margin-bottom: 40px;
+.menu-list-section-iv {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 40px;
 }
-@media screen and (min-width: 768px){
-    .menu-list-section-iv{
-        gap: 24px;
-    }
-}
-@media screen and (min-width: 1440px){
-    .menu-list-section-iv{
-        align-items: center;
-                   
-    }
-}
-
-.btn-list-section-iv{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 16px;
-    border-radius: 8px;
-    padding: 32px 16px;
-    width: 159px;
-    height: 122px;
-    
-}
-@media screen and (min-width: 768px){
-    .btn-list-section-iv{
-        width: 158px;
-    }
+@media screen and (min-width: 768px) {
+  .menu-list-section-iv {
+    gap: 24px;
+  }
 }
 @media screen and (min-width: 1440px) {
-    .btn-list-section-iv {
-        width: 166px;
-       
-    }
-}
-
-.text-btn-list-iv{
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.4;
-    letter-spacing: 0.01em;
-    text-align: center;
-    color: #fff;
-}
-@media screen and (min-width: 768px){
-    .text-btn-list-iv{
-        font-size: 20px;
-    }
-}
-
-.active-btn-iv{
-    border: 8px solid #6b0609;
-    border-radius: 8px;
-    padding: 32px 16px;
-    width: 160px;
-    height: 122px;
-}
-@media screen and (min-width: 768px){
-    .active-btn-iv {
-        width: 158px;
-    }
-}
-
-.image-btn-list-all{
-    
-    background-size: cover;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.fl-one {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/li1-min.jpg') 1x,
-      url('../img/furniture-list-section/li1@2x-min.jpg') 2x);
-}
-
-.fl-two {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/Li2list-min.jpg') 1x,
-      url('../img/furniture-list-section/Li2list@2x-min.jpg') 2x);
-}
-
-.fl-three {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/Li3list-min.jpg') 1x,
-      url('../img/furniture-list-section/Li3list@2x-min.jpg') 2x);
-}
-
-.fl-for {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/Li4list-min.jpg') 1x,
-      url('../img/furniture-list-section/Li4list@2x-min.jpg') 2x);
-}
-
-.fl-five {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/Li5list-min.jpg') 1x,
-      url('../img/furniture-list-section/Li5list@2x-min.jpg') 2x);
-}
-
-.fl-six {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/li6-min.jpg') 1x,
-      url('../img/furniture-list-section/li6@2x-min.jpg') 2x);
-}
-
-.fl-sev {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/li7c-min.jpg') 1x,
-      url('../img/furniture-list-section/li7@2x-min.jpg') 2x);
-}
-
-.fl-eig {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/li8-min.jpg') 1x,
-      url('../img/furniture-list-section/li8@2x-min.jpg') 2x);
-}
-
-.fl-nine {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/li9-min.jpg') 1x,
-      url('../img/furniture-list-section/li9@2x-min.jpg') 2x);
-}
-
-.fl-ten {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/li10-min.jpg') 1x,
-      url('../img/furniture-list-section/li10@2x-min.jpg') 2x);
-}
-
-.fl-el {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/li11-min.jpg') 1x,
-      url('../img/furniture-list-section/li11@2x-min.jpg') 2x);
-}
-
-.fl-tw {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/li12-min.jpg') 1x,
-      url('../img/furniture-list-section/li12@2x-min.jpg') 2x);
-}
-
-.fl-thir {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/furniture-list-section/li13-min.jpg') 1x,
-      url('../img/furniture-list-section/li13@2x-min.jpg') 2x);
-}
-
-.btn-load-more-list{
-    display: flex;
+  .menu-list-section-iv {
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 8px;
-    border-radius: 100px;
-    padding: 10px 24px;
-    width: 340px;
-    height: 46px;
-    box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-    background: #6b0609;
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #fff;
+  }
 }
-
-
-@media screen and (min-width: 1440px){
-    .btn-load-more-list{
-        width: 421px;
-    }
-}
-
 
 .btn-list-section-iv {
   display: flex;
@@ -252,6 +74,11 @@
 @media screen and (min-width: 768px) {
   .btn-list-section-iv {
     width: 158px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .btn-list-section-iv {
+    width: 166px;
   }
 }
 
@@ -280,6 +107,178 @@
 @media screen and (min-width: 768px) {
   .active-btn-iv {
     width: 158px;
+  }
+}
+
+.image-btn-list-all {
+  background-size: cover;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.fl-one {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/li1-min.jpg') 1x,
+      url('../img/furniture-list-section/li1@2x-min.jpg') 2x
+    );
+}
+
+.fl-two {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/Li2list-min.jpg') 1x,
+      url('../img/furniture-list-section/Li2list@2x-min.jpg') 2x
+    );
+}
+
+.fl-three {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/Li3list-min.jpg') 1x,
+      url('../img/furniture-list-section/Li3list@2x-min.jpg') 2x
+    );
+}
+
+.fl-for {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/Li4list-min.jpg') 1x,
+      url('../img/furniture-list-section/Li4list@2x-min.jpg') 2x
+    );
+}
+
+.fl-five {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/Li5list-min.jpg') 1x,
+      url('../img/furniture-list-section/Li5list@2x-min.jpg') 2x
+    );
+}
+
+.fl-six {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/li6-min.jpg') 1x,
+      url('../img/furniture-list-section/li6@2x-min.jpg') 2x
+    );
+}
+
+.fl-sev {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/li7c-min.jpg') 1x,
+      url('../img/furniture-list-section/li7@2x-min.jpg') 2x
+    );
+}
+
+.fl-eig {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/li8-min.jpg') 1x,
+      url('../img/furniture-list-section/li8@2x-min.jpg') 2x
+    );
+}
+
+.fl-nine {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/li9-min.jpg') 1x,
+      url('../img/furniture-list-section/li9@2x-min.jpg') 2x
+    );
+}
+
+.fl-ten {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/li10-min.jpg') 1x,
+      url('../img/furniture-list-section/li10@2x-min.jpg') 2x
+    );
+}
+
+.fl-el {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/li11-min.jpg') 1x,
+      url('../img/furniture-list-section/li11@2x-min.jpg') 2x
+    );
+}
+
+.fl-tw {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/li12-min.jpg') 1x,
+      url('../img/furniture-list-section/li12@2x-min.jpg') 2x
+    );
+}
+
+.fl-thir {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/furniture-list-section/li13-min.jpg') 1x,
+      url('../img/furniture-list-section/li13@2x-min.jpg') 2x
+    );
+}
+
+.btn-load-more-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 340px;
+  height: 46px;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+@media screen and (min-width: 1440px) {
+  .btn-load-more-list {
+    width: 421px;
+  }
+}
+
+.text-btn-list-iv {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .text-btn-list-iv {
+    font-size: 20px;
+  }
+}
+
+.active-btn-iv {
+  border: 8px solid #6b0609;
+  border-radius: 8px;
+  padding: 32px 16px;
+  width: 160px;
+  height: 122px;
+}
+@media screen and (min-width: 768px) {
+  .active-btn-iv {
+    width: 158px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .active-btn-iv {
+    width: 166px;
   }
 }
 

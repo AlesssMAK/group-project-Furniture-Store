@@ -152,17 +152,17 @@ export const getLocalProductById = id => {
   return localProducts.find(p => p._id === id);
 };
 
-export const fetchProductModal = async () => {
-  try {
-    const response = await api.get(ENDPOINTS.FURNITURES);
-    const products = response.data.furnitures;
-    setLocalProducts(products);
-    return products;
-  } catch (error) {
-    iziToast.error({
-      title: 'Error',
-      message: 'Не вдалося завантажити товари',
-    });
-    throw error;
-  }
-};
+// export const fetchProductModal = async () => {
+//   try {
+//     const response = await api.get(ENDPOINTS.FURNITURES);
+//     const products = response.data.furnitures;
+//     setLocalProducts(products);
+//     return products;
+//   } catch (error) {
+//     iziToast.error({
+//       title: 'Error',
+//       message: 'Не вдалося завантажити товари',
+//     });
+//     throw error;
+//   }
+// };
