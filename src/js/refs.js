@@ -6,5 +6,6 @@ export const refs = {
     modalCloseBtn: document.querySelector(".modal-furnt-close-btn"),
     categoriesList: document.querySelector(".menu-list-section-iv"),
     loadMoreListBtn: document.querySelector(".btn-load-more-list"),
+    orderModal: document.querySelector('.order-modal'),
 }
 
