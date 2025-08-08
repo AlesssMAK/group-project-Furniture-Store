@@ -12,8 +12,8 @@ body {
     justify-content: space-between;
     height: 72px;
     background: #fff;
-    position: fixed;
-    padding: 0 64px;
+    
+    
     top: 0;
     left: 0;
     right: 0;
@@ -21,13 +21,26 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
+
+
+.header-logo {
+    width: 228px;
+    height: 72px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
-    flex-direction: row;
-    gap: 0px;
     margin-right: 32px;
+    padding: 0;
+}
+
+.header-logo svg {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.header-socials-icon {
+    fill: black;
 }
 
 .nav {
@@ -38,8 +51,8 @@ body {
     list-style: none;
     display: flex;
     align-items: center;
-        justify-content: flex-start;
-        flex-direction: row;
+    justify-content: flex-start;
+    flex-direction: row;
     margin-right: 32px;
  
     gap: 32px;
@@ -119,7 +132,7 @@ font-weight: 400;
 .mobile-menu-header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     width: 100%;
     margin-bottom: 32px;
 }
@@ -134,13 +147,34 @@ font-weight: 400;
     height: 100%;
 }
 
-.mobile-menu .close {
-    align-self: flex-end;
-    font-size: 2rem;
-    background: none;
-    border: none;
+.modal-window-close-btn {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
     cursor: pointer;
-    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.8s ease 0s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-window-close-svg {
+    fill: #2e2f42;
+    transition: all 0.8s ease 0s;
+}
+
+.modal-window-close-btn:focus {
+    background-color: #6b0609;
+    border: none;
+}
+
+.modal-window-close-btn:focus .modal-window-close-svg {
+    fill: #ffffff;
 }
 
 .mobile-nav-list {
