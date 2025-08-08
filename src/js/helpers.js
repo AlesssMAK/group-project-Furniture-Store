@@ -1,4 +1,4 @@
-import { refs } from "./refs";
+import { refs } from './refs';
 
 const loader = document.getElementById('loader');
 
@@ -11,9 +11,10 @@ export const hideLoader = () => {
 };
 
 export const showLoadMoreListBtn = () => {
-  refs.loadMoreListBtn.classList.remove("hidden");
+  refs.loadMoreListBtn.classList.remove('hidden');
 };
 
 export const hideLoadMoreListBtn = () => {
-  refs.loadMoreListBtn.classList.add("hidden");
-}
+  refs.loadMoreListBtn.classList.add('hidden');
+  
+};

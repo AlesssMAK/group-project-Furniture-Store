@@ -1,11 +1,27 @@
 import { refs } from './refs';
+import { setLocalProducts } from './furniture-store-api';
+
 
 // Furniture Modal
 
+
+// async function init() {
+//   try {
+//     await fetchProductModal(); 
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+// init();
+
 export const renderProductModal = modalData => {
-    const { name, description, images, rate, price, sizes, color, category } = modalData;
-  
-    const imagesMarkup = `
+  const { name, description, images, rate, price, sizes, color, category } =
+    modalData;
+
+    const roundedRate = Math.round(rate * 2) / 2;
+
+  const imagesMarkup = `
       <div class="gallery">
         <img src="${images[0]}" alt="${name}" class="gallery__item gallery__item--large" />
         <div class="gallery__row">
@@ -14,36 +30,49 @@ export const renderProductModal = modalData => {
         </div>
       </div>
     `;
-  
-    const colorsMarkup = color
-      .map((clr, index) => `
-        <label class="color-checkbox-label">
-          <input type="checkbox" name="color" value="${clr}" class="color-item" id="color-${index}" />
-          <span class="color-checkbox-circle" style="background-color: ${clr}"></span>
-        </label>
-      `)
-      .join('');
-  
-    refs.productMadalContainer.innerHTML = `
+
+  const colorsMarkup = color
+    .map(
+      (clr, index) => `
+    <label class="color-checkbox-label">
+      <input
+        type="radio"
+        name="color"
+        value="${clr}"
+        class="color-item"
+        id="color-${index}"
+        ${index === 0 ? 'checked' : ''}
+      />
+      <span class="color-checkbox-circle" style="background-color: ${clr}"></span>
+    </label>
+  `
+    )
+    .join('');
+
+  refs.productMadalContainer.innerHTML = `
       <div class="modal-product-img-gallery">${imagesMarkup}</div>
       <div class="furniture-modal-product-content">
         <h2 class="modal-product-title">${name}</h2>
         <p class="gategory-text">${category.name}</p>
         <p class="product-price">${price} грн</p>
-        <svg class="product-rating">${rate}</svg>
+        <div class="css-star-rating" data-rating="${roundedRate}"></div>
         <div class="color-picker">${colorsMarkup}</div>
         <p class="product-description">${description}</p>
         <p class="product-size">Розміри: ${sizes}</p>
         <button class="order-btn" type="button">Перейти до замовлення</button>
       </div>
     `;
-  };
-  
+};
+
+
 
 
 // furniture list
-  
+
 export const renderFurniture = furnitures => {
+
+  setLocalProducts(furnitures);
+
   const markup = furnitures
     .map(
       ({ images, _id, type, price }) => `

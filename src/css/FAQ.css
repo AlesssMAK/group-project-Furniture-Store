@@ -10,9 +10,16 @@
 }
 
 .faq-section .secondary-heading {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 32px; 
+  line-height: 120%;
+  letter-spacing: 1%;
   text-align: center;
+  color: #080C09;
   margin-bottom: 32px;
 }
+
 
 .accordion-container {
   max-width: 865px;
@@ -26,7 +33,7 @@
 }
 
 .ac:last-child {
-    border-bottom: 1px solid rgba(8, 12, 9, 0.15) !important;
+  border-bottom: 1px solid rgba(8, 12, 9, 0.15) !important;
 }
 
 .ac-trigger {
@@ -39,12 +46,17 @@
   align-items: center;
 }
 
+/* Прибираємо плюс від accordion-js */
+.ac-trigger::after {
+  content: none !important;
+}
 
 .ac-trigger .ac-trigger-icon {
-    transition: transform 250ms cubic-bezier(0.77,0,0.18,1);
+  transition: transform 250ms cubic-bezier(0.77, 0, 0.18, 1);
 }
-.ac.is-active  .ac-trigger .ac-trigger-icon {
-    transform: rotate(-180deg);
+
+.ac.is-active .ac-trigger .ac-trigger-icon {
+  transform: rotate(-180deg);
 }
 
 .ac-text {
@@ -55,16 +67,15 @@
 }
 
 @media only screen and (min-width: 768px) {
- .ac {
-        padding: 21.5px 0;
-    }
+  .ac {
+    padding: 21.5px 0;
+  }
 
   .ac-trigger {
-  font-size: 18px !important;
-}
+    font-size: 18px !important;
+  }
 
-.ac-text {
-  font-size: 18px !important;
+  .ac-text {
+    font-size: 18px !important;
+  }
 }
-}
-
