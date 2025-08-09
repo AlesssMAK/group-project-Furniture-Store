@@ -26,8 +26,9 @@
 .order-modal-window {
     min-width: 335px;
     max-width: 90%;
+    height: 90%;
   border-radius: 8px;
-  
+  position: relative; 
   background: #fff;
  
   padding-top: 64px;
@@ -51,7 +52,7 @@
 .modal-window-close-btn {
   width: 32px;
   height: 32px;
-  position: absolute;
+   position: absolute; 
   top: 16px;
   right: 16px;
   cursor: pointer;

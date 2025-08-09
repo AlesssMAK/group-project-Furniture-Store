@@ -3,76 +3,92 @@ import iziToast from "izitoast";
 
 const btnClose = document.querySelector('.modal-window-close-btn');
 const orderModal = document.querySelector ('.order-modal');
-const formModalOrder = document.querySelector ('.modal-window-form')
+const form = document.querySelector ('.modal-window-form')
 
-let selectedProductId = null;
-console.log('btnClose:', btnClose);
+let orderData = {};
 
-export function openOrderModal(productId) {
-selectedProductId = productId;
-  
+
+export function openOrderModal(data = {}) {
+orderData = data;  
   orderModal.classList.add("is-open");
   document.body.style.overflow = "hidden";
-  //  document.body.classList.add("no-scroll");
+    window.addEventListener('keydown', handleEsc);
+  orderModal.addEventListener('click', handleBackdropClick);
 }
 
 function closeModalOrder() {
-orderModal.classList.remove("is-open");
+  console.log('Закриваємо модалку');
+ orderModal.classList.remove("is-open");
 document.body.style.overflow = "";
-  // document.body.classList.remove("no-scroll");
-  selectedProductId = null;
+     window.removeEventListener('keydown', handleEsc);
+  orderModal.removeEventListener('click', handleBackdropClick);
+  form.reset();
+  orderData = {};
+}
+
+function handleEsc(e) {
+  if (e.key === 'Escape') {
+    closeModalOrder();
+  }
+}
+
+function handleBackdropClick(e) {
+  if (e.target === orderModal) {
+    closeModalOrder();
+  }
+}
+
+if (btnClose) {
+  btnClose.addEventListener ("click",closeModalOrder);
+  }
+
+  function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validateTel (tel) {
+  return  /^[0-9]{12}$/.test(tel);
 }
 
 
-btnClose.addEventListener ("click",closeModalOrder);
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-document.addEventListener ("keydown", (event) => {
-    if (event.key === "Escape") {
-        closeModalOrder()
-    }
-});
+    const email = e.target.elements['user-email'].value.trim();
+    const tel = e.target.elements['user-tel'].value.trim();
+    const comment = e.target.elements['user-comment'].value.trim();
 
-orderModal.addEventListener ("click", (event) => {
-    if (event.target === orderModal) {
-        closeModalOrder();
-    }
-})
-
-formModalOrder.addEventListener("submit", sendOrder)
-
-async function sendOrder (event) {
-    event.preventDefault();
-
-    const email = event.target.elements['user-email'].value.trim();
-    const tel = event.target.elements['user-tel'].value.trim();
-    const comment = event.target.elements['user-comment'].value.trim();
-
-    if (!email) {
-    iziToast.warning({ message: 'Заповніть поле "Email"!' });
+    if (!validateEmail(email)) {
+    iziToast.warning({ message: 'Введіть коректний Email!' });
     return;
   }
-
-      if (!tel) {
-    iziToast.warning({ message: 'Вкажіть номер телефону!' });
+  
+      if (!validateTel (tel)) {
+    iziToast.warning({ message: 'Вкажіть коректний номер телефону!' });
     return;
   }
 
      if (comment.length < 5 || comment.length > 64) {
-    iziToast.warning({ message: 'Комментар не може бути від 5 до 64 символів' });
+    iziToast.warning({ message: 'Комментар має бути від 5 до 64 символів' });
     return;
   }
-  
-    
-   await createOrder({
-    email,
-    phone: tel,
-    comment,
-    color,
-    modelId: selectedProductId
-  })
+ 
+    try {
+      await createOrder({
+        email,
+        phone: tel,
+        comment,
+        color: orderData.color || null,
+        modelId: orderData.productId || null
+      });
 
-   closeModalOrder();
-  event.target.reset();
+  iziToast.success({ message: 'Заявку відправлено!' });
+      closeModalOrder();
+    } catch (err) {
+      iziToast.error({ message: 'Сталася помилка. Спробуйте ще раз.' });
+    }
+  });
+ 
+
 }
-
-

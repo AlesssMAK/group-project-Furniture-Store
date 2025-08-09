@@ -1,5 +1,5 @@
 .faq-section {
-  padding: 80px 0;
+  padding: 48px 0;
 }
 
 .faq-section .container {
@@ -79,3 +79,11 @@
     font-size: 18px !important;
   }
 }
+
+
+@media only screen and (min-width: 1440px) {
+  .faq-section {
+    padding: 80px 0;
+  }
+}
+
