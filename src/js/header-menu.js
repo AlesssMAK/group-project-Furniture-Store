@@ -10,17 +10,14 @@ function openMenu() {
   mobileMenu.setAttribute('aria-hidden', 'false');
   burgerBtn.setAttribute('aria-expanded', 'true');
   body.style.overflow = 'hidden';
-  burgerBtn.focus();
-  burgerBtn.style.display = 'none';// ховаємо burger 
+  burgerBtn.focus(); // фокус на кнопку бургер (опційно)
 }
 
 function closeMenu() {
   mobileMenu.classList.remove('open');
   mobileMenu.setAttribute('aria-hidden', 'true');
   burgerBtn.setAttribute('aria-expanded', 'false');
-  body.style.overflow = ''; 
-  burgerBtn.style.display = ''; //повертаємо burger   
-
+  body.style.overflow = '';
   
 
   if (document.activeElement) {
@@ -71,7 +68,4 @@ if (logoLink) {
 }
 
 
-
-
-
-
+body.setAttribute('tabindex', '-1');
