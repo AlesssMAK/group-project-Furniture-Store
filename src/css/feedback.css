@@ -149,6 +149,30 @@
   font-size: 24px;
 }
 
+.swiper-button-prev:hover,
+.swiper-button-next:hover,
+.swiper-button-prev:focus,
+.swiper-button-next:focus {
+    border: none;
+    background-color: #975052;
+    fill: #fff;
+}
+
+.swiper-button-prev:active,
+.swiper-button-next:active {
+    border: none;
+    background-color: #6b0609;
+    ;
+    fill: #fff;
+}
+
+.swiper-button-prev:disabled,
+.swiper-button-next:disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
