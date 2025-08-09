@@ -41,7 +41,6 @@
 }
 
 /* === Swiper === */
-/* Не перевизначаємо flex/justify/gap — лише декоративний відступ знизу */
 .feedback-swiper .swiper-wrapper {
   margin-bottom: 48px;
 }
@@ -50,15 +49,10 @@
   overflow: hidden;
 }
 
-/* Слайд не центруємо і не звужуємо насильно */
 .feedback-swiper .swiper-slide {
   height: auto;
   text-align: left;
   background: #fff;
-  /* ВИДАЛЕНО:
-     margin: 0 auto;
-     max-width: 320px;
-  */
 }
 
 /* === Картка відгуку === */
@@ -68,9 +62,8 @@
   align-items: flex-start;
   margin-bottom: 56px;
 
-  /* Контролюємо ширину всередині картки, а не на .swiper-slide */
   width: 100%;
-  max-width: 421px; /* десктоп максимум */
+  max-width: 421px;
 }
 
 .feedback-text {
@@ -79,7 +72,6 @@
   margin-bottom: 24px;
   line-height: 1.6;
   color: #080c09;
-  /* Заміна фіксованої ширини на гнучку */
   width: 100%;
   max-width: 392px;
 }
@@ -91,23 +83,6 @@
   color: #080c09;
   margin-bottom: 56px;
 }
-
-/* === Рейтинг (Raty stars) — (твоя частина, без змін логіки) === */
-/* .rating {
-  font-size: 20px;
-  color: #ffb400;
-  margin-bottom: 12px;
-}
-
-.rating i {
-  color: #ffb400;
-  margin-right: 4px;
-}
-.stars {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 24px;
-} */
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover,
@@ -122,7 +97,6 @@
   cursor: not-allowed;
 }
 
-/* === Іконки стрілок (підключай svg або font icons) === */
 .arrow-icon {
   fill: #080c09;
   pointer-events: none;
@@ -184,9 +158,7 @@
   }
 }
 
-/* === Адаптивність === */
 @media screen and (min-width: 768px) {
-  /* Картка трохи вужча на планшеті */
   .feedback-card {
     max-width: 340px;
   }
@@ -210,7 +182,6 @@
   }
 }
 
-/* === Зірки (твій блок — без змін) === */
 .star-container {
   margin-bottom: 20px;
 }
