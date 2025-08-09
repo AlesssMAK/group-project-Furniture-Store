@@ -1,205 +1,272 @@
 /* === Базові стилі секції відгуків === */
 .feedback-section {
-    padding: 64px 20px;
-    background-color: #fff;
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
+  padding: 64px 0;
 }
 
 .feedback-title {
-    font-size: 36px;
-    color: #080C09;
-    font-weight: 700;
-    margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #080c09;
+  margin-bottom: 24px;
 }
 
 .feedback-subtitle {
-    font-size: 16px;
-    font-weight: 400;
-    color: #080C09;
-    margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  margin-bottom: 80px;
 }
 
-/* === Контейнер Swiper та слайди === */
+@media screen and (min-width: 768px) {
+  .feedback-section {
+    padding: 32px 0;
+  }
+
+  .feedback-title {
+    font-size: 48px;
+  }
+
+  .feedback-subtitle {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .feedback-section {
+    padding: 64px 0;
+  }
+}
+
+/* === Swiper === */
+.feedback-swiper .swiper-wrapper {
+  margin-bottom: 48px;
+}
+
 .feedback-swiper {
-    position: relative;
-    overflow: visible;
-    padding-bottom: 48px;
+  overflow: hidden;
 }
 
-.swiper-wrapper {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-}
-
-.swiper-slide {
-    padding: 24px;
-    height: auto;
-    margin: 0 auto;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
-    text-align: left;
-        background: #fff;
-            text-align: left;
-            height: auto;
-            max-width: 320px;
-            margin: 0 auto;
+.feedback-swiper .swiper-slide {
+  height: auto;
+  text-align: left;
+  background: #fff;
 }
 
 /* === Картка відгуку === */
 .feedback-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 56px;
+
+  width: 100%;
+  max-width: 421px;
 }
 
 .feedback-text {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 24px;
-    color: #080C09;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  color: #080c09;
+  width: 100%;
+  max-width: 392px;
 }
 
 .feedback-author {
-    font-weight: 600;
-    color: #080C09;
-    font-size: 16px;
-}
-
-/* === Рейтинг (Raty stars) === */
-.rating {
-    font-size: 20px;
-    color: #ffb400;
-    margin-bottom: 12px;
-}
-
-.rating i {
-    color: #ffb400;
-    margin-right: 4px;
-}
-.stars {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 24px;
-}
-
-/* === Кнопки навігації Swiper === */
-.swiper-button-prev,
-.swiper-button-next {
-    position: absolute;
-    top: 50%;
-    width: 44px;
-    height: 44px;
-    transform: translateY(-50%);
-    background-color: #f3f5f6;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 250ms ease;
-    color: #080C09;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  margin-bottom: 56px;
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover,
 .swiper-button-prev:focus,
 .swiper-button-next:focus {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
 
 .swiper-button-prev[disabled],
 .swiper-button-next[disabled] {
-    opacity: 0.3;
-    cursor: not-allowed;
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
-.swiper-button-prev {
-    left: -20px;
-}
-
-.swiper-button-next {
-    right: -20px;
-}
-
-/* === Іконки стрілок (підключай svg або font icons) === */
 .arrow-icon {
-    fill: #080C09;
-    pointer-events: none;
+  fill: #080c09;
+  pointer-events: none;
 }
 
 /* === Пагінація Swiper === */
 .swiper-pagination {
-    margin-top: 32px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.swiper-button-container {
+  display: flex;
+  gap: 16px;
 }
 
 .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: #d3d3d3;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
+  width: 9px;
+  height: 9px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  transition: background-color 0.8s ease 0s;
+  cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #080C09;
+  background-color: #080c09;
 }
 
-/* === Лоадер === */
-#feedback-loader {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #ccc;
-    border-top: 4px solid #000;
-    border-radius: 50%;
-    margin: 0 auto 40px;
-    animation: spin 0.8s linear infinite;
-    display: none;
-    /* Показуй его через js */
-}
 /* === Кнопки === */
 .swiper-button-next,
 .swiper-button-prev {
-    color: #080C09;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: #f2f2f2;
+  color: #080c09;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  padding: 12px;
+  border: 1px solid rgba(8, 12, 9, 0.15);
 }
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-/* === Адаптивність === */
-
-/* Планшет: 2 слайди по 340px */
 @media screen and (min-width: 768px) {
-    .swiper-slide {
-        max-width: 340px;
-    }
+  .feedback-card {
+    max-width: 340px;
+  }
+
+  .feedback-text {
+    font-size: 20px;
+    max-width: 312px;
+  }
+
+  .feedback-card {
+    margin-bottom: 0;
+  }
 }
 
-/* Десктоп: 3 слайди по 421px */
 @media screen and (min-width: 1440px) {
-    .swiper-slide {
-        max-width: 421px;
-    }
+  .feedback-card {
+    max-width: 421px;
+  }
+  .feedback-text {
+    max-width: 392px;
+  }
+}
+
+.star-container {
+  margin-bottom: 20px;
+}
+
+/* Розмір і відступи */
+.feedback-card .rating.star-icon .star {
+  position: relative;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  margin-right: 4px;
+  vertical-align: top;
+}
+.feedback-card .rating.star-icon .star:last-child {
+  margin-right: 0;
+}
+.feedback-card .rating.star-icon .star i {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* === БАЗА: сіра "порожня" заливка (без обвідки) === */
+.feedback-card .rating.star-icon .star .star-empty {
+  background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+<path fill="%23e5e5e5" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/>\
+</svg>');
+}
+
+/* === ПОВНЕ ЗАПОВНЕННЯ: чорна заливка (без обвідки) === */
+.feedback-card .rating.star-icon .star .star-filled {
+  background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+<path fill="%23000000" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/>\
+</svg>');
+}
+
+/* === ПІВЗІРКА: чорна заливка, обрізана праворуч на 50% (без обвідки) === */
+.feedback-card .rating.star-icon .star .star-half {
+  background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+<path fill="%23000000" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/>\
+</svg>');
+  clip-path: inset(0 50% 0 0); /* лівa половина */
+}
+
+/* === ВЕРХНІЙ КОНТУР: завжди зверху, щоб обводка не зникала === */
+.feedback-card .rating.star-icon .star::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+<path fill="none" stroke="%23999999" stroke-width="1.2" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/>\
+</svg>');
+}
+
+/* Спершу ховаємо заливки */
+.feedback-card .rating.star-icon .star .star-filled,
+.feedback-card .rating.star-icon .star .star-half {
+  display: none;
+}
+
+/* Повні зірки */
+.feedback-card .rating.star-icon.value-1 .star:nth-child(-n + 1) .star-filled,
+.feedback-card .rating.star-icon.value-2 .star:nth-child(-n + 2) .star-filled,
+.feedback-card .rating.star-icon.value-3 .star:nth-child(-n + 3) .star-filled,
+.feedback-card .rating.star-icon.value-4 .star:nth-child(-n + 4) .star-filled,
+.feedback-card .rating.star-icon.value-5 .star:nth-child(-n + 5) .star-filled {
+  display: block;
+}
+
+/* Півзірка на наступній позиції */
+.feedback-card .rating.star-icon.half.value-0 .star:nth-child(1) .star-half,
+.feedback-card .rating.star-icon.half.value-1 .star:nth-child(2) .star-half,
+.feedback-card .rating.star-icon.half.value-2 .star:nth-child(3) .star-half,
+.feedback-card .rating.star-icon.half.value-3 .star:nth-child(4) .star-half,
+.feedback-card .rating.star-icon.half.value-4 .star:nth-child(5) .star-half {
+  display: block;
 }

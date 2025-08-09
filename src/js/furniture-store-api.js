@@ -1,7 +1,7 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-
+import { showLoader, hideLoader } from './helpers.js';
 // API
 export const BASE_URL = 'https://furniture-store.b.goit.study/api';
 
@@ -22,7 +22,8 @@ const api = axios.create({
 });
 
 // меблі
-export const fetchFurnitures = async (page) => {
+export const fetchFurnitures = async page => {
+  showLoader();
   try {
     const response = await api.get(ENDPOINTS.FURNITURES, {
       params: {
@@ -39,10 +40,13 @@ export const fetchFurnitures = async (page) => {
       timeout: 4000,
     });
     return null;
+  } finally {
+    hideLoader();
   }
-}
+};
 //меблі за категорією
 export const fetchFurnituresByCategory = async (category, page = 1) => {
+  showLoader();
   try {
     const response = await api.get(ENDPOINTS.FURNITURES, {
       params: {
@@ -60,12 +64,14 @@ export const fetchFurnituresByCategory = async (category, page = 1) => {
       timeout: 4000,
     });
     return null;
+  } finally {
+    hideLoader();
   }
-}
-
+};
 
 // категорії
 export const fetchCategories = async () => {
+  showLoader();
   try {
     const response = await api.get(ENDPOINTS.CATEGORIES);
     return response.data;
@@ -78,14 +84,20 @@ export const fetchCategories = async () => {
       timeout: 4000,
     });
     return null;
+  } finally {
+    hideLoader();
   }
-}
+};
 
 //  Відгуки
-export const fetchFeedbacks = async (page = 1, limit = 3) => {
+export const fetchFeedbacks = async (page = 1, limit) => {
+  showLoader();
   try {
     const response = await api.get(ENDPOINTS.FEEDBACKS, {
-      params: { page, limit },
+      params: {
+        page,
+        limit,
+      },
     });
     return response.data;
   } catch (error) {
@@ -96,11 +108,14 @@ export const fetchFeedbacks = async (page = 1, limit = 3) => {
       timeout: 4000,
     });
     return null;
+  } finally {
+    hideLoader();
   }
-}
+};
 
 // Нове замовлення
-export const createOrder = async (orderInfo) => {
+export const createOrder = async orderInfo => {
+  showLoader();
   try {
     const response = await api.post(ENDPOINTS.ORDERS, orderInfo);
 
@@ -123,10 +138,12 @@ export const createOrder = async (orderInfo) => {
       timeout: 4000,
     });
     return null;
+  } finally {
+    hideLoader();
   }
-}
+};
 
-// furniture details modal 
+// furniture details modal
 
 let localProducts = [];
 
@@ -136,4 +153,3 @@ export const setLocalProducts = products => {
 
 export const getLocalProductById = id => {
   return localProducts.find(p => p._id === id);
-};
