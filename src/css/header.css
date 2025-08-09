@@ -2,7 +2,6 @@ body {
   font-weight: 600;
 }
 
-<<<<<<< HEAD
 .header {
     position: fixed;
     display: flex;
@@ -15,15 +14,6 @@ body {
     right: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-=======
-.header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  background: #fff;
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
->>>>>>> origin/main
 }
 
 .header-logo {
@@ -111,7 +101,6 @@ body {
 }
 
 .icon {
-<<<<<<< HEAD
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -131,12 +120,3 @@ body {
 
 
 
-=======
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
->>>>>>> origin/main

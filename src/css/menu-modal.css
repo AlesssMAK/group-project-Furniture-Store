@@ -66,12 +66,7 @@
 }
 
 .modal-window-close-btn:focus {
-<<<<<<< HEAD
     opacity: 0.5;
-=======
-  background-color: #6b0609;
-  border: none;
->>>>>>> origin/main
 }
 
 .modal-window-close-btn:focus .modal-window-close-svg {
@@ -143,7 +138,6 @@
     padding: 32px 24px;
   }
 
-<<<<<<< HEAD
     .mobile-menu {
         position: absolute;
         top: 0;
@@ -154,25 +148,6 @@
         display: block;
         z-index: 1100;
     }
-=======
-  .mobile-menu nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    /* width: 375px; */
-    height: auto;
-    background: #fff;
-    padding: 24px 32px;
-    /* box-sizing: border-box; */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-    transform: translateX(100%);
-    transition: transform 0.5s ease;
-    position: fixed;
-  }
->>>>>>> origin/main
 
   .mobile-menu.open nav {
     transform: translateX(0);
@@ -207,30 +182,8 @@
     justify-content: center;
     align-items: center;
 
-<<<<<<< HEAD
-    .modal-window-close-btn {
-        position: absolute;
-        top: 16px;
-        right: 16px;
-        width: 32px;
-        height: 32px;
-        background-color: white;
-        border-radius: 50%;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        z-index: 1200;
-    }
-    .burger.hidden {
-        display: none;
-        }
-=======
     z-index: 1200;
   }
->>>>>>> origin/main
 }
 
 /* Desktop */
