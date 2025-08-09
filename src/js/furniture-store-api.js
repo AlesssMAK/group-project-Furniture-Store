@@ -90,11 +90,14 @@ export const fetchCategories = async () => {
 };
 
 //  Відгуки
-export const fetchFeedbacks = async (page = 1, limit = 3) => {
+export const fetchFeedbacks = async (page = 1, limit) => {
   showLoader();
   try {
     const response = await api.get(ENDPOINTS.FEEDBACKS, {
-      params: { page, limit },
+      params: {
+        page,
+        limit,
+      },
     });
     return response.data;
   } catch (error) {

@@ -65,11 +65,17 @@ refs.modalCloseBtn.addEventListener('click', closeModal);
 
 // повісила слухача модалку кнопка "замовити"
 
+export const openModalOrder = () => {
+  refs.orderModal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  window.addEventListener('keydown', clickEscPress);
+  refs.orderModal.addEventListener('click', clickBackdropClick);
+};
+
 
 document.addEventListener("click", event => {
     const orderBtn = event.target.closest('.order-btn');
     if(!orderBtn) return;
-    closeModal()
-    refs.orderModal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
+  closeModal();
+  openModalOrder();
 })
