@@ -1,5 +1,5 @@
 import iziToast from 'izitoast';
-import { fetchProductModal, getLocalProductById } from './furniture-store-api';
+import { getLocalProductById } from './furniture-store-api';
 import { refs } from './refs';
 import { renderProductModal } from './render-function';
 
@@ -21,7 +21,6 @@ export const openModal = productId => {
   document.body.style.overflow = 'hidden';
   window.addEventListener('keydown', clickEscPress);
   refs.productModal.addEventListener('click', clickBackdropClick);
-//   setCurrentProduct(productId);
 };
 
 export const closeModal = () => {
@@ -63,7 +62,7 @@ refs.modalCloseBtn.addEventListener('click', closeModal);
   
 
 
-// повісила слухача модалку кнопка "замовити"
+// повісила слухача на модалк: кнопка "замовити"
 
 
 document.addEventListener("click", event => {

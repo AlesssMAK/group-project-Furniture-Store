@@ -1,19 +1,7 @@
 import { refs } from './refs';
-import { fetchProductModal, setLocalProducts } from './furniture-store-api';
+import { setLocalProducts } from './furniture-store-api';
 
 
-// Furniture Modal
-
-
-async function init() {
-  try {
-    await fetchProductModal(); 
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-init();
 
 export const renderProductModal = modalData => {
   const { name, description, images, rate, price, sizes, color, category } =
