@@ -1,53 +1,59 @@
 import iziToast from "izitoast";
 import { createOrder } from "./furniture-store-api";
 
-const btnClose = document.querySelector('.modal-window-close-btn');
+const btnClose = document.querySelector('.modal-window-close-order-btn');
 const orderModal = document.querySelector('.order-modal');
 const formModalOrder = document.querySelector('.modal-window-form');
 
 let selectedProductId = null;
 let selectedColor = null;
 
+const clickEscPress = event => {
+  if (event.code === 'Escape') {
+    closeModalOrder();
+  }
+};
+
+const clickBackdropClick = event => {
+  if (event.target === orderModal) {
+    closeModalOrder();
+  }
+};
+
 export function openOrderModal(productId, color) {
   selectedProductId = productId;
   selectedColor = color;
 
-  orderModal.style.display = "block";
+  // orderModal.style.display = "block";
   orderModal.classList.add("is-open");
   document.body.style.overflow = "hidden";
-  document.body.classList.add("no-scroll");
+  window.addEventListener('keydown', clickEscPress);
+  orderModal.addEventListener('click', clickBackdropClick);
 }
 
 function closeModalOrder() {
-  orderModal.style.display = "none";
+  console.log("ok");
+  
+  // orderModal.style.display = "none";
   orderModal.classList.remove("is-open");
-  document.body.classList.remove("no-scroll");
- 
+  document.body.style.overflow = '';
+  window.removeEventListener('keydown', clickEscPress);
+ orderModal.removeEventListener('click', clickBackdropClick);
+  
   // 🆕 ДОБАВЛЕНО — очистка сохранённых значений
   selectedProductId = null;
   selectedColor = null;
 }
- console.log(formModalOrder); // должен быть не null
+
 btnClose.addEventListener("click", closeModalOrder);
 
-btnClose.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeModalOrder();
-  }
-});
-
-orderModal.addEventListener("click", (event) => {
-  if (event.target === orderModal) {
-    closeModalOrder();
-  }
-});
 
 formModalOrder.addEventListener("submit", sendOrder);
 
 async function sendOrder(event) {
   event.preventDefault();
 
-  // 🔧 ИЗМЕНЕНО — убраны '#' в именах полей
+
   const email = event.target.elements['user-email'].value.trim();
   const tel = event.target.elements['user-tel'].value.trim();
   const comment = event.target.elements['user-comment'].value.trim();
