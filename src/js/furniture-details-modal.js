@@ -52,6 +52,7 @@ export async function onProductModalClick(event) {
 
   const product = getLocalProductById(productId);
 
+
   if (!product) {
     iziToast.error({
       title: 'Error',
@@ -59,6 +60,9 @@ export async function onProductModalClick(event) {
     });
     return;
   }
+  
+// повісила слухача на модалк: кнопка "замовити"
+
 
   renderProductModal(product);
   openModal(productId, color); // 🔹 ИЗМЕНЕНО — передаем ID и цвет в openModal

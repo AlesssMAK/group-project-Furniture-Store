@@ -1,5 +1,9 @@
 import { refs } from './refs';
 import { setLocalProducts } from './furniture-store-api';
+
+
+
+
 import 'css-star-rating/css/star-rating.css';
 
 
@@ -35,6 +39,7 @@ export const  starMarkup = () => {
 
 
 // -----------------------------------------зірки---------------------------------
+
 
 
 
