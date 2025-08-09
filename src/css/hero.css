@@ -1,20 +1,9 @@
 .hero-container {
   padding: 157px 20px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../img/hero/hero-mob-1x-min.jpg);
-  background-color: rgba(217, 217, 217, 1);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   width: 100%;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi) {
-  .hero-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url(../img/hero/hero-mob-2x-min.jpg);
-  }
 }
 
 .hero-title {
@@ -81,31 +70,34 @@
 @media screen and (min-width: 768px) {
   .hero-container {
     padding: 36px 33px 37px 32px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url(../img/hero/hero-tab-1x-min.jpg);
-  }
-
-  @media screen and (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi) {
-    .hero-container {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url(../img/hero/hero-tab-2x-min.jpg);
-    }
   }
 }
 
 @media screen and (min-width: 1440px) {
   .hero-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url(../img/hero/hero-desk-1x-min.jpg);
     padding: 92px 65px 92px 63px;
   }
+}
 
-  @media screen and (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi) {
-    .hero-container {
+
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    image-set(url(../img/hero/hero-mob-1x.jpg) 1x, url(../img/hero/hero-mob-2x.jpg) 2x);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section {
       background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url(../img/hero/hero-desk-2x-min.jpg);
-    }
+    image-set(url(../img/hero/hero-tablet-1x.jpg) 1x, url(../img/hero/hero-tablet-2x.jpg) 2x);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero-section{
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    image-set(url(../img/hero/hero-desk-1x.jpg) 1x, url(../img/hero/hero-desk-2x.jpg) 2x);
   }
 }
