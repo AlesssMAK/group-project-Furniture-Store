@@ -13,7 +13,7 @@
   visibility: hidden;
   pointer-events: none;
   transition: all 0.8s ease 0s;
-  padding: 64px, 20px;
+  padding: 64px 20px;
 }
 
 .order-modal.is-open {

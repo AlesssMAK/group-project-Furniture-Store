@@ -1,14 +1,17 @@
 import iziToast from "izitoast";
     import { createOrder } from "./furniture-store-api";
 
+    document.addEventListener('DOMContentLoaded', () => {
 const btnClose = document.querySelector('.modal-window-close-btn');
 const orderModal = document.querySelector ('.order-modal');
 const form = document.querySelector ('.modal-window-form')
 
 let orderData = {};
+console.log('JS завантажено, btnClose:', btnClose);
 
 
-export function openOrderModal(data = {}) {
+
+ function openOrderModal(data = {}) {
 orderData = data;  
   orderModal.classList.add("is-open");
   document.body.style.overflow = "hidden";
@@ -16,8 +19,9 @@ orderData = data;
   orderModal.addEventListener('click', handleBackdropClick);
 }
 
+
 function closeModalOrder() {
-  console.log('Закриваємо модалку');
+  console.log ('Закриття вікна')
  orderModal.classList.remove("is-open");
 document.body.style.overflow = "";
      window.removeEventListener('keydown', handleEsc);
@@ -25,6 +29,7 @@ document.body.style.overflow = "";
   form.reset();
   orderData = {};
 }
+console.log(orderModal, form)
 
 function handleEsc(e) {
   if (e.key === 'Escape') {
@@ -39,6 +44,7 @@ function handleBackdropClick(e) {
 }
 
 if (btnClose) {
+  console.log('Додаю слухач на кнопку закриття');
   btnClose.addEventListener ("click",closeModalOrder);
   }
 
@@ -83,6 +89,9 @@ if (form) {
         modelId: orderData.productId || null
       });
 
+ 
+    form.innerHTML = '';
+  
   iziToast.success({ message: 'Заявку відправлено!' });
       closeModalOrder();
     } catch (err) {
@@ -92,3 +101,5 @@ if (form) {
  
 
 }
+
+});
