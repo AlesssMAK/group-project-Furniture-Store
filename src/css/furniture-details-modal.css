@@ -66,37 +66,37 @@
   gap: 24px;
 }
 .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 295px;
-    margin: 0 auto;
-  }
-  
-  .gallery__item {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-  }
-  
-  .gallery__item--large {
-     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-  }
-  
-  .gallery__row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  
-  .gallery__row .gallery__item {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    gap: 16px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 295px;
+  margin: 0 auto;
+}
+
+.gallery__item {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.gallery__item--large {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gallery__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.gallery__row .gallery__item {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  gap: 16px;
+}
 
 .furniture-modal-product-content {
   margin-bottom: 24px;
@@ -238,7 +238,6 @@
     max-height: 90vh;
     padding: 25px 32px;
   }
-  
 
   .gallery {
     max-width: 640px;
