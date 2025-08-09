@@ -1,5 +1,5 @@
 import iziToast from "izitoast";
-    import { createOrder } from "./furniture-store-api";
+import { createOrder } from "./furniture-store-api";
 
 const btnClose = document.querySelector('.modal-window-close-btn');
 const orderModal = document.querySelector ('.order-modal');
@@ -92,3 +92,4 @@ if (form) {
  
 
 }
+

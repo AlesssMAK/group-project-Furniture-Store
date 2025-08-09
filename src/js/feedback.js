@@ -1,43 +1,15 @@
 import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-
-// підключаємо бібліотеку зірок (база)
 import 'css-star-rating/css/star-rating.css';
 
 import { fetchFeedbacks } from './furniture-store-api';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import { normalizeRating, starMarkup } from './render-function';
 
 const feedbackList = document.getElementById('feedback-list');
 
-// === ОКРУГЛЕННЯ ЗА ПРАВИЛОМ ===
-// 3.3–3.7 -> 3.5; 3.8–4.2 -> 4; решта — до найближчого 0.5
-function normalizeRating(rate) {
-  const r = Math.max(0, Math.min(5, Number(rate) || 0));
-  if (r >= 3.3 && r <= 3.7) return 3.5;
-  if (r >= 3.8 && r <= 4.2) return 4;
-  return Math.round(r * 2) / 2;
-}
-
-// === Розмітка, яку очікує css-star-rating ===
-function starMarkup() {
-  return `
-    <div class="star-container">
-      ${Array.from({ length: 5 })
-        .map(
-          () => `
-          <div class="star">
-            <i class="star-empty"></i>
-            <i class="star-half"></i>
-            <i class="star-filled"></i>
-          </div>`
-        )
-        .join('')}
-    </div>`;
-}
 
 // === Картка відгуку ===
 function createFeedbackCard({ name, descr, rate }) {
