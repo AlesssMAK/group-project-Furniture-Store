@@ -1,5 +1,7 @@
 /* === Базові стилі секції відгуків === */
 .feedback-section {
+  position: relative;
+  z-index: 0;
   padding: 64px 0;
 }
 
@@ -153,24 +155,29 @@
 .swiper-button-next:hover,
 .swiper-button-prev:focus,
 .swiper-button-next:focus {
-    border: none;
-    background-color: #975052;
-    fill: #fff;
+  border: none;
+  background-color: #975052;
+}
+
+.swiper-button-prev:hover .arrow-icon,
+.swiper-button-next:hover .arrow-icon,
+.swiper-button-prev:focus .arrow-icon,
+.swiper-button-next:focus .arrow-icon {
+  fill: #fff;
 }
 
 .swiper-button-prev:active,
 .swiper-button-next:active {
-    border: none;
-    background-color: #6b0609;
-    ;
-    fill: #fff;
+  border: none;
+  background-color: #6b0609;
+  fill: #fff;
 }
 
 .swiper-button-prev:disabled,
 .swiper-button-next:disabled {
-    opacity: 0.3;
-    cursor: default;
-    pointer-events: none;
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
 }
 
 @keyframes spin {
