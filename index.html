@@ -13,7 +13,7 @@
     <script type="module" crossorigin src="/group-project-Furniture-Store/index.js"></script>
     <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-DGn7RuFN.js">
     <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/vendor-Dj0nbOrW.css">
-    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-CTxbK5Ma.css">
+    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-BmjOz7qp.css">
   </head>
   <body>
     <header class="header">
@@ -52,20 +52,24 @@
     ></a>
   </div>
 
-  <nav>
-    <button type="button" class="modal-window-close-btn">
-      <svg class="modal-window-close-svg" width="32" height="32">
-        <use href="/group-project-Furniture-Store/assets/sprite-DGKBa4KI.svg#icon-x"></use>
-      </svg>
-    </button>
-    <ul class="mobile-nav-list">
-      <li><a href="#furniture-list" class="mobile-nav-link">Наші меблі</a></li>
-      <li><a href="#about-us" class="mobile-nav-link">Про нас</a></li>
-      <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
-      <li><a href="#feedback" class="mobile-nav-link">Відгуки</a></li>
-    </ul>
-    <a href="#furniture-list" class="btn-buy-mobile">До покупок</a>
-  </nav>
+  <div class="container">
+    <nav class="mobile-panel">
+      <button type="button" class="modal-window-close-btn">
+        <svg class="modal-window-close-svg" width="32" height="32">
+          <use href="/group-project-Furniture-Store/assets/sprite-DGKBa4KI.svg#icon-x"></use>
+        </svg>
+      </button>
+      <ul class="mobile-nav-list">
+        <li>
+          <a href="#furniture-list" class="mobile-nav-link">Наші меблі</a>
+        </li>
+        <li><a href="#about-us" class="mobile-nav-link">Про нас</a></li>
+        <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+        <li><a href="#feedback" class="mobile-nav-link">Відгуки</a></li>
+      </ul>
+      <a href="#furniture-list" class="btn-buy-mobile">До покупок</a>
+    </nav>
+  </div>
 </div>
 
     <div id="loader" class="loader hidden" aria-label="Завантаження...">
@@ -455,39 +459,41 @@
        Замовити зворотний зв’язок для оформлення замовлення
     </p>
 
-        <form class="modal-window-form">
-<label class="modal-window-label" for="user-email">Email*</label>
-       
-          <input
-            id="user-email"
-            class="modal-window-input"
-            type="email"
-            name="user-email"
-            placeholder="example@gmail.com"
-            required
-          />
-         
-      <label class="modal-window-label" for="user-tel">Телефон*</label>
-        
-          <input
-            id="user-tel"
-            class="modal-window-input"
-            type="tel"
-            name="user-tel"
-            placeholder="+38 (067) 000 00 00"
-            required
-          />
-          
-          <label class="modal-window-label" for="user-comment">Коментар</label>
-        <textarea
-          class="modal-window-textarea"
-          id="user-comment"
-          name="user-comment"
-          placeholder="Type your message..."
-        ></textarea>
-<button class="order-modal-btn" type="submit">Надіслати заявку</button>
+    <form class="modal-window-form">
+      <label class="modal-window-label" for="user-email">Email*</label>
 
-      
+      <input
+        id="user-email"
+        class="modal-window-input"
+        type="email"
+        name="user-email"
+        placeholder="example@gmail.com"
+        required
+      />
+
+      <label class="modal-window-label" for="user-tel">Телефон*</label>
+
+      <input
+        id="user-tel"
+        class="modal-window-input"
+        type="tel"
+        name="user-tel"
+        placeholder="+38 (067) 000 00 00"
+        required
+      />
+
+      <label class="modal-window-label" for="user-comment">Коментар</label>
+      <textarea
+        class="modal-window-textarea"
+        id="user-comment"
+        name="user-comment"
+        placeholder="Type your message..."
+      ></textarea>
+      <button class="order-modal-btn" type="submit">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
+
 
   </body>
 </html>
