@@ -150,6 +150,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    justify-content: space-between;
 }
 
 .modal-window-close-btn {
@@ -219,7 +220,7 @@ body {
     text-decoration: none;
     flex-direction: row;
     cursor: pointer;
-    margin-bottom: auto;
+  
     font-weight: 500;
     font-size: 16px;
     line-height: 1.6;
@@ -262,6 +263,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        justify-content: flex-start;
         transform: translateX(100%);
         transition: transform 0.5s ease;
         position: fixed;
@@ -282,7 +284,7 @@ body {
     }
 
     .btn-buy-mobile {
-        margin-bottom: 20px;
+        margin-top: 32px;
     }
 
     .modal-window-close-btn {
@@ -298,6 +300,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        
         z-index: 1200;
     }
 }
