@@ -78,4 +78,5 @@ document.addEventListener("click", event => {
     if(!orderBtn) return;
   closeModal();
   openModalOrder();
+  openOrderModal();
 })

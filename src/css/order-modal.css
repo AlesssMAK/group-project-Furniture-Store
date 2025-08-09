@@ -1,7 +1,7 @@
 
 .order-modal {
-    min-width: 100%;
-  height: 100%;
+    width: 100vw;
+  height: 100vh;
   background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
   top: 0;
@@ -14,6 +14,7 @@
   pointer-events: none;
   transition: all 0.8s ease 0s;
   padding: 64px 20px;
+  z-index: 1000;
 }
 
 .order-modal.is-open {
@@ -24,13 +25,15 @@
 
 
 .order-modal-window {
+  display: flex;
+  flex-direction: column;
     min-width: 335px;
-    max-width: 90%;
-    height: 90%;
+    max-width: 90vh;
+    max-height: 90vh;
   border-radius: 8px;
   position: relative; 
   background: #fff;
- 
+   overflow-y: auto;
   padding-top: 64px;
   padding-bottom: 64px;
   padding-left: 20px;
@@ -38,16 +41,13 @@
   transition: all 0.8s ease 0s;
 }
 
-.order-modal-window.is-open {
+/* .order-modal-window.is-open {
   transform: translate(-50%, -50%) scale(1);
 }
 .order-modal-window.is-closing {
   transform: translate(-50%, -50%) scale(0.8);
-}
+} */
 
-.no-scroll {
-  overflow: hidden;
-}
 
 .modal-window-close-btn {
   width: 32px;
@@ -181,17 +181,23 @@ color: rgba(8, 12, 9, 0.6);
 
 @media screen and (min-width: 768px) {
   .order-modal-window {
-    width: auto;
-    max-height: 776px;
-    padding: 64px;
+        padding: 64px 32px;
   }
   .order-modal-btn {
-    width: 196px;
+    max-width: 704px;
+    max-height: 90vh;
+    padding: 25px 32px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .modal-window-close-btn:hover,
+  .order-modal-window {
+    max-width: 1090px;
+    padding: 25px 64px;
+    
+  }
+  
+    .modal-window-close-btn:hover,
   .modal-window-close-btn:focus {
      background-color: #6b0609;
   border: none;
