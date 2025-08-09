@@ -66,8 +66,7 @@
 }
 
 .modal-window-close-btn:focus {
-  background-color: #6b0609;
-  border: none;
+    opacity: 0.5;
 }
 
 .modal-window-close-btn:focus .modal-window-close-svg {
@@ -139,23 +138,16 @@
     padding: 32px 24px;
   }
 
-  .mobile-menu nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    /* width: 375px; */
-    height: auto;
-    background: #fff;
-    padding: 24px 32px;
-    /* box-sizing: border-box; */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-    transform: translateX(100%);
-    transition: transform 0.5s ease;
-    position: fixed;
-  }
+    .mobile-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: transparent;
+        display: block;
+        z-index: 1100;
+    }
 
   .mobile-menu.open nav {
     transform: translateX(0);
