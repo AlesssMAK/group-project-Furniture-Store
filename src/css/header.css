@@ -1,10 +1,8 @@
 body {
-    margin: 0;
-    font-family: "Raleway", sans-serif;
-    scroll-behavior: smooth;
-    font-weight: 600;
+  font-weight: 600;
 }
 
+<<<<<<< HEAD
 .header {
     position: fixed;
     display: flex;
@@ -17,89 +15,103 @@ body {
     right: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+=======
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  background: #fff;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+>>>>>>> origin/main
 }
 
 .header-logo {
-    width: 228px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-right: 32px;
-    padding: 0;
+  width: 228px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 32px;
+  padding: 0;
 }
 
 .header-logo svg {
-    height: 60px;
-    width: auto;
-    display: block;
+  height: 60px;
+  width: auto;
+  display: block;
 }
 
 .header-socials-icon {
-    fill: black;
+  fill: black;
 }
 
 .nav {
-    display: none;
+  display: none;
 }
 
 .nav-list {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    margin-right: 32px;
-    gap: 32px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-right: 32px;
+  gap: 32px;
 }
 
 .nav-link {
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #080c09;
-    padding: 8px 12px;
-   
-    
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  padding: 8px 12px;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .btn-buy {
-    display: none;
-    box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-    background: #6b0609;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: background-color 0.5s;
+  display: none;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.5s;
 }
 
 .btn-buy:hover,
 .btn-buy:focus {
-    box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-        background: #6b0609;
-        opacity: 0.5;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  opacity: 0.5;
 }
 
 .burger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .icon {
+<<<<<<< HEAD
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -119,3 +131,12 @@ body {
 
 
 
+=======
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+>>>>>>> origin/main

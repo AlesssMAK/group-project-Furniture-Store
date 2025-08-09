@@ -11,8 +11,6 @@
   align-items: center;
   width: 100%;
   height: 100%;
-
-  padding: 64px 20px;
   background-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -35,28 +33,19 @@
   overflow-y: auto;
   background-color: white;
   border-radius: 8px;
-  padding: 25px 20px;
+  padding: 64px 20px;
 }
 
 .modal-furnt-close-btn {
-  position: static;
-  align-self: flex-end;
-  margin-bottom: 25px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
   background: none;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.modal-furnt-close-btn::after {
-  content: '✕';
-  font-size: 1.5rem;
-  color: #080c09;
-  transition: color 0.3s ease;
-}
-
-.modal-furnt-close-btn:hover::after {
-  color: #6b0609;
+  padding: 0;
 }
 
 .furniture-modal-product {
@@ -177,6 +166,13 @@
   line-height: 160%;
 }
 
+.product-color {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
 .product-size {
   margin-bottom: 24px;
   font-weight: 400;
@@ -229,14 +225,11 @@
 /* Styles for Tablet devices */
 
 @media only screen and (min-width: 768px) {
-  .furniture-details-modal {
-    padding: 64px 32px;
-  }
 
   .furniture-modal-content {
     max-width: 704px;
     max-height: 90vh;
-    padding: 25px 32px;
+    padding: 64px 32px;
   }
 
   .gallery {
@@ -264,13 +257,10 @@
 /* Styles for Desktop devices */
 
 @media only screen and (min-width: 1440px) {
-  .furniture-details-modal {
-    padding: 64px 0;
-  }
 
   .furniture-modal-content {
     max-width: 1090px;
-    padding: 25px 64px;
+    padding: 64px 64px;
   }
 
   .furniture-modal-product {
@@ -299,4 +289,114 @@
 
 .order-btn {
   margin: 0;
+}
+
+/* -------------------------------------star------------------------------------- */
+.furniture-modal-product-content .rating.star-icon {
+  display: flex;
+  justify-content: flex-start; /* зірки до лівого краю */
+  align-items: center;
+  margin-bottom: 24px;
+}
+.furniture-modal-product-content .star-container {
+  margin: 0;
+}
+
+/* .furniture-modal-product-content .rating.star-icon {
+  margin: 0;
+} */
+
+.star-container {
+  display: flex;
+  justify-content: flex-start;
+  /* margin-bottom: 20px; */
+}
+
+/* Окрема зірка */
+.rating.star-icon .star {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  vertical-align: top;
+}
+.rating.star-icon .star:last-child {
+  margin-right: 0;
+}
+
+/* УСІ шари зірки — однакове позиціонування та розмір */
+/* це прибирає “з’їзд” заливки відносно контуру */
+.rating.star-icon .star .star-empty,
+.rating.star-icon .star .star-filled,
+.rating.star-icon .star .star-half {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%; /* <-- ключ для синхрону з контуром */
+}
+
+/* Порожня зірка (світло-сіра) */
+.rating.star-icon .star .star-empty {
+  background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+<path fill="%23e5e5e5" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/>\
+</svg>');
+}
+
+/* Повністю заповнена зірка (чорна) */
+.rating.star-icon .star .star-filled {
+  background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+<path fill="%23000000" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/>\
+</svg>');
+}
+
+/* Половинна зірка (ліва половина) */
+.rating.star-icon .star .star-half {
+  background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+<path fill="%23000000" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/>\
+</svg>');
+  clip-path: inset(0 50% 0 0); /* рівно половина по ширині */
+}
+
+/* Верхній контур (один і той самий для всіх станів) */
+.rating.star-icon .star::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: 100% 100%; /* <-- той самий розмір */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+<path fill="none" stroke="%23999999" stroke-width="1.2" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/>\
+</svg>');
+}
+
+/* Ховаємо заповнення за замовчуванням */
+.rating.star-icon .star .star-filled,
+.rating.star-icon .star .star-half {
+  display: none;
+}
+
+/* Повні зірки */
+.rating.star-icon.value-1 .star:nth-child(-n + 1) .star-filled,
+.rating.star-icon.value-2 .star:nth-child(-n + 2) .star-filled,
+.rating.star-icon.value-3 .star:nth-child(-n + 3) .star-filled,
+.rating.star-icon.value-4 .star:nth-child(-n + 4) .star-filled,
+.rating.star-icon.value-5 .star:nth-child(-n + 5) .star-filled {
+  display: block;
+}
+
+/* Половинка на наступній позиції */
+.rating.star-icon.half.value-0 .star:nth-child(1) .star-half,
+.rating.star-icon.half.value-1 .star:nth-child(2) .star-half,
+.rating.star-icon.half.value-2 .star:nth-child(3) .star-half,
+.rating.star-icon.half.value-3 .star:nth-child(4) .star-half,
+.rating.star-icon.half.value-4 .star:nth-child(5) .star-half {
+  display: block;
 }
