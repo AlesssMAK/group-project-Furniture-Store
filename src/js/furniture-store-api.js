@@ -153,3 +153,4 @@ export const setLocalProducts = products => {
 
 export const getLocalProductById = id => {
   return localProducts.find(p => p._id === id);
+};
