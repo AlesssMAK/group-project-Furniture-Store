@@ -71,7 +71,7 @@ if (logoLink) {
 }
 
 
-body.setAttribute('tabindex', '-1');
+
 
 
 
