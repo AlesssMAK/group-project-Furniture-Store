@@ -5,11 +5,15 @@
     <link rel="icon" type="image/svg+xml" href="/group-project-Furniture-Store/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Меблерія</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/css-star-rating/css/star-rating.min.css"
+    />
 
     <script type="module" crossorigin src="/group-project-Furniture-Store/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-0_PbKLAl.js">
-    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/vendor-JyzU0S79.css">
-    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-tFvnJ5tx.css">
+    <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-B6mmEaK7.js">
+    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/vendor-DtopGnPY.css">
+    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-DtfOoNAR.css">
   </head>
   <body>
     <header class="container header">
@@ -233,7 +237,7 @@
 </div>
 </section>
 
-      <section id="faq-section" class="faq-section">
+      <section id="faq" class="faq-section">
   <div class="container">
     <h2 class="secondary-heading">Часті питання</h2>
     <div class="accordion-container">
@@ -327,11 +331,6 @@
       Дізнайтеся, що кажуть наші задоволені клієнти про наші меблі
     </p>
 
-    <!-- Лоадер -->
-    <div id="feedback-loader" class="feedback-loader visually-hidden">
-      <span class="loader"></span>
-    </div>
-
     <!-- Swiper -->
     <div class="feedback-swiper swiper">
       <div id="feedback-list" class="swiper-wrapper">
@@ -339,27 +338,31 @@
       </div>
 
       <!-- Пагінація -->
-      <div class="swiper-pagination"></div>
+      <div class="pagination-container">
+        <div class="swiper-pagination"></div>
 
-      <!-- Кнопки навігації -->
-      <button
-        class="swiper-button-prev"
-        type="button"
-        aria-label="Попередній відгук"
-      >
-        <svg class="arrow-icon" width="24" height="24">
-          <use href="./img/icons.svg#icon-arrow-left"></use>
-        </svg>
-      </button>
-      <button
-        class="swiper-button-next"
-        type="button"
-        aria-label="Наступний відгук"
-      >
-        <svg class="arrow-icon" width="24" height="24">
-          <use href="./img/icons.svg#icon-arrow-right"></use>
-        </svg>
-      </button>
+        <!-- Кнопки навігації -->
+        <div class="swiper-button-container">
+          <button
+            class="swiper-button-prev"
+            type="button"
+            aria-label="Попередній відгук"
+          >
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/group-project-Furniture-Store/assets/sprite-Cn0UstJL.svg#icon-left-arrow-alt"></use>
+            </svg>
+          </button>
+          <button
+            class="swiper-button-next"
+            type="button"
+            aria-label="Наступний відгук"
+          >
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/group-project-Furniture-Store/assets/sprite-Cn0UstJL.svg#icon-right-arrow-alt"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
