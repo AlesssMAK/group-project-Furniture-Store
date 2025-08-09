@@ -113,7 +113,7 @@ export const fetchFeedbacks = async (page = 1, limit) => {
   }
 };
 
-// Нове замовлення
+//Нове замовлення
 export const createOrder = async orderInfo => {
   showLoader();
   try {
@@ -143,7 +143,7 @@ export const createOrder = async orderInfo => {
   }
 };
 
-// furniture details modal
+//furniture details modal
 
 let localProducts = [];
 
