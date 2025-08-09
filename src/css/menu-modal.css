@@ -179,7 +179,7 @@
         width: 32px;
         height: 32px;
         background-color: white;
-        border-radius: 50%;
+   
         border: 1px solid rgba(0, 0, 0, 0.1);
         cursor: pointer;
         display: flex;
