@@ -10,9 +10,7 @@ function openMenu() {
   mobileMenu.setAttribute('aria-hidden', 'false');
   burgerBtn.setAttribute('aria-expanded', 'true');
   body.style.overflow = 'hidden';
-  burgerBtn.focus(); 
-  burgerBtn.style.display = 'none'; // приховуємо кнопку бургер
-  closeBtn.focus(); 
+  burgerBtn.focus(); // фокус на кнопку бургер (опційно)
 }
 
 function closeMenu() {
@@ -20,7 +18,6 @@ function closeMenu() {
   mobileMenu.setAttribute('aria-hidden', 'true');
   burgerBtn.setAttribute('aria-expanded', 'false');
   body.style.overflow = '';
-   burgerBtn.style.display = ''; // показуємо кнопку бургер
   
 
   if (document.activeElement) {
@@ -49,7 +46,7 @@ buyBtns.forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
     closeMenu();
-    const furnitureSection = document.querySelector('#furniture-list');
+    const furnitureSection = document.querySelector('#furniture') || document.querySelector('#furniture-list');
     if (furnitureSection) {
       furnitureSection.scrollIntoView({ behavior: 'smooth' });
     }
