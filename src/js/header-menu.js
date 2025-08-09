@@ -5,40 +5,42 @@ const mobileLinks = mobileMenu.querySelectorAll('a');
 const buyBtns = document.querySelectorAll('.btn-buy, .btn-buy-mobile'); 
 const body = document.body;
 
-
 function openMenu() {
   mobileMenu.classList.add('open');
   mobileMenu.setAttribute('aria-hidden', 'false');
   burgerBtn.setAttribute('aria-expanded', 'true');
   body.style.overflow = 'hidden';
+  burgerBtn.focus(); // фокус на кнопку бургер (опційно)
 }
-
 
 function closeMenu() {
   mobileMenu.classList.remove('open');
   mobileMenu.setAttribute('aria-hidden', 'true');
   burgerBtn.setAttribute('aria-expanded', 'false');
   body.style.overflow = '';
+  
+
+  if (document.activeElement) {
+    document.activeElement.blur();
+  }
+ 
+  body.focus({ preventScroll: true });
 }
 
 burgerBtn.addEventListener('click', openMenu);
 closeBtn.addEventListener('click', closeMenu);
 
-
 mobileMenu.addEventListener('click', e => {
   if (e.target === mobileMenu) closeMenu();
 });
-
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
 });
 
-
 mobileLinks.forEach(link => {
   link.addEventListener('click', () => closeMenu());
 });
-
 
 buyBtns.forEach(btn => {
   btn.addEventListener('click', e => {
@@ -50,7 +52,6 @@ buyBtns.forEach(btn => {
     }
   });
 });
-
 
 const logoLink = document.querySelector('.header-logo');
 if (logoLink) {
@@ -65,3 +66,6 @@ if (logoLink) {
     }
   });
 }
+
+
+body.setAttribute('tabindex', '-1');
