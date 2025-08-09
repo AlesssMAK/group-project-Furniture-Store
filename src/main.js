@@ -3,4 +3,4 @@ import "./js/furniture-list.js";
 import "./js/faq.js";
 import "./js/feedback";
 import "./js/furniture-details-modal";
-import "./js/order-modal.js";
+// import "./js/order-modal.js";
