@@ -75,6 +75,13 @@ document.addEventListener("click", event => {
   const orderBtn = event.target.closest('.order-btn');
   if (!orderBtn) return;
 
+  const selectedProductId = currentProductId;
+  const selectedCurrentColor = GetSelectedColor();
   closeModal(); 
-  openOrderModal(currentProductId, currentColor); // 🔹 ИЗМЕНЕНО — передаем ID и цвет из текущей модалки
+  openOrderModal(selectedProductId, selectedCurrentColor); // 🔹 ИЗМЕНЕНО — передаем ID и цвет из текущей модалки
 });
+
+function GetSelectedColor () {
+  const selected = document.querySelector('input[name="color"]:checked');
+  return selected ? selected.value : null;
+}
