@@ -69,6 +69,5 @@ if (logoLink) {
     }
   });
 }
-
-
+// for focus
 body.setAttribute('tabindex', '-1');
