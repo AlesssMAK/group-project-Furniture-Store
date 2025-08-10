@@ -14,78 +14,18 @@ import {
 } from './helpers';
 import { renderFurniture } from './render-function';
 
+// ====== state ======
 let currentPage = 1;
+const PER_PAGE = 8;
 
-hideLoader();
-const loadFurniture = async () => {
-  currentPage = 1;
-  showLoader();
-  const { furnitures, totalItems } = await fetchFurnitures(currentPage);
-  hideLoader();
-  // hideLoadMoreListBtn();
+// ====== init ======
+document.addEventListener('DOMContentLoaded', () => {
+  refs.categoriesList?.addEventListener('click', handleCategoryClick);
+  refs.loadMoreListBtn?.addEventListener('click', handleLoadMoreListClick);
 
-  renderFurniture(furnitures);
-
-  const totalPages = Math.ceil(totalItems / 8);
-
-  if (currentPage >= totalPages) {
-    iziToast.info({
-      title: 'Повідомлення',
-      message: 'Всі меблі завантаженні.',
-      position: 'topRight',
-      timeout: 4000,
-    });
-  } else {
-    showLoadMoreListBtn();
-  }
-};
-
-export const handleLoadMoreListClick = async () => {
-  currentPage++;
-  hideLoadMoreListBtn();
-  showLoader();
-
-  const { furnitures, totalItems } = await fetchFurnitures(currentPage);
-
-  renderFurniture(furnitures);
-
-  hideLoader();
-
-  const totalPages = Math.ceil(totalItems / 8);
-
-  if (currentPage >= totalPages) {
-    iziToast.info({
-      title: 'Повідомлення',
-      message: 'Всі меблі завантаженні.',
-      position: 'topRight',
-      timeout: 4000,
-    });
-  } else {
-    showLoadMoreListBtn();
-  }
-};
-
-async function loadFurnitureByCategory(category) {
-  showLoader();
-  const data = await fetchFurnituresByCategory(category);
-  hideLoader();
-
-  if (data && data.furnitures) {
-    hideLoadMoreListBtn();
-    renderFurniture(data.furnitures);
-  } else {
-    hideLoadMoreListBtn();
-    refs.furnitureList.innerHTML = '<p>Не вдалося завантажити меблі.</p>';
-  }
-}
-
-export const handleCategoryClick = async e => {
-  const clickedBtn = e.target.closest('.btn-list-section-iv');
-
-  if (!clickedBtn) return;
-  highlightActiveCategory(clickedBtn);
-  loadFurnitureByCategory(clickedBtn.dataset.id);
-};
+  loadFurniture();
+  activeFirstBtn();
+});
 
 export const activeFirstBtn = () => {
   const firstBtn = document.querySelector('.btn-list-section-iv');
@@ -93,7 +33,6 @@ export const activeFirstBtn = () => {
     highlightActiveCategory(firstBtn);
   }
 };
-// Підсвітка активної категорії ===
 
 export const highlightActiveCategory = activeButton => {
   document
@@ -102,14 +41,96 @@ export const highlightActiveCategory = activeButton => {
   activeButton.classList.add('active-btn-iv');
 };
 
-// --------------------------------------------------Завантаження---------------------------------------------------//
-loadFurniture();
+// ====== data loaders ======
+const loadFurniture = async () => {
+  currentPage = 1;
+  showLoader();
+  try {
+    const { furnitures, totalItems } = await fetchFurnitures(currentPage);
+    renderFurniture(furnitures); // припускаю, що це рендерить ЗАМІНОЮ списку
+    const totalPages = Math.ceil(totalItems / PER_PAGE);
+    if (currentPage < totalPages) showLoadMoreListBtn();
+    else hideLoadMoreListBtn();
+  } catch (e) {
+    iziToast.error({
+      title: 'Помилка',
+      message: 'Не вдалося завантажити меблі. Спробуйте пізніше.',
+      position: 'topRight',
+      timeout: 4000,
+    });
+    hideLoadMoreListBtn();
+  } finally {
+    hideLoader();
+  }
+};
 
-// --------------------------------------------------Слухачі подій---------------------------------------------------//
-//  Клік по категорії ===
-document.addEventListener('DOMContentLoaded', () => {
-  refs.categoriesList.addEventListener('click', handleCategoryClick);
-  activeFirstBtn();
-});
+async function loadFurnitureByCategory(category, page = 1) {
+  showLoader();
+  try {
+    const { furnitures, totalItems } = await fetchFurnituresByCategory(
+      category,
+      page
+    );
+    renderFurniture(furnitures);
+    const totalPages = Math.ceil(totalItems / PER_PAGE);
+    if (page < totalPages) showLoadMoreListBtn();
+    else hideLoadMoreListBtn();
+  } catch (e) {
+    hideLoadMoreListBtn();
+    refs.furnitureList.innerHTML = '<p>Не вдалося завантажити меблі.</p>';
+  } finally {
+    hideLoader();
+  }
+}
 
-refs.loadMoreListBtn.addEventListener('click', handleLoadMoreListClick);
+// ====== handlers ======
+export const handleCategoryClick = async e => {
+  const clickedBtn = e.target.closest('.btn-list-section-iv');
+  if (!clickedBtn) return;
+
+  highlightActiveCategory(clickedBtn);
+  const cat = clickedBtn.dataset.id;
+
+  if (!cat || cat === 'all') {
+    await loadFurniture();
+  } else {
+    currentPage = 1;
+    await loadFurnitureByCategory(cat, currentPage);
+  }
+};
+
+export const handleLoadMoreListClick = async () => {
+  // визначаємо активну категорію
+  const active = document.querySelector('.btn-list-section-iv.active-btn-iv');
+  const cat = active?.dataset.id;
+
+  currentPage += 1;
+  hideLoadMoreListBtn();
+  showLoader();
+
+  try {
+    if (!cat || cat === 'all') {
+      const { furnitures, totalItems } = await fetchFurnitures(currentPage);
+      renderFurniture(furnitures);
+      const totalPages = Math.ceil(totalItems / PER_PAGE);
+      if (currentPage < totalPages) showLoadMoreListBtn();
+    } else {
+      const { furnitures, totalItems } = await fetchFurnituresByCategory(
+        cat,
+        currentPage
+      );
+      renderFurniture(furnitures);
+      const totalPages = Math.ceil(totalItems / PER_PAGE);
+      if (currentPage < totalPages) showLoadMoreListBtn();
+    }
+  } catch (e) {
+    iziToast.error({
+      title: 'Помилка',
+      message: 'Не вдалося завантажити меблі. Спробуйте пізніше.',
+      position: 'topRight',
+      timeout: 4000,
+    });
+  } finally {
+    hideLoader();
+  }
+};
