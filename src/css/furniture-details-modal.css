@@ -44,8 +44,14 @@
   background: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.8s ease 0s;
   padding: 0;
+  opacity: 1;
+  transition: all 0.8s ease 0s;
+}
+
+.modal-furnt-close-btn:focus {
+  opacity: 0.5;
 }
 
 .furniture-modal-product {
@@ -200,36 +206,29 @@
   line-height: 160%;
   color: white;
   margin-top: auto;
-}
-
-.order-btn:hover {
-  box-shadow: 0 1px 2px 0 var(--opacity-neutral-darkest-5),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px var(--opacity-neutral-darkest-15),
-    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 32px 24px 0 var(--opacity-white-5);
-  background: #6b0609;
-  opacity: 0.5;
+  opacity: 1;
+  transition: all 0.8s ease 0s;
 }
 
 .order-btn:focus {
-  box-shadow: 0 1px 2px 0 var(--opacity-neutral-darkest-5),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px var(--opacity-neutral-darkest-15),
-    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 32px 24px 0 var(--opacity-white-5);
-  background: #6b0609;
   opacity: 0.5;
 }
 
 /* Styles for Tablet devices */
 
 @media only screen and (min-width: 768px) {
-
   .furniture-modal-content {
     max-width: 704px;
     max-height: 90vh;
     padding: 64px 32px;
+  }
+
+  .modal-furnt-close-btn:hover {
+    opacity: 0.5;
+  }
+
+  .order-btn:hover {
+    opacity: 0.5;
   }
 
   .gallery {
@@ -257,7 +256,6 @@
 /* Styles for Desktop devices */
 
 @media only screen and (min-width: 1440px) {
-
   .furniture-modal-content {
     max-width: 1090px;
     padding: 64px 64px;

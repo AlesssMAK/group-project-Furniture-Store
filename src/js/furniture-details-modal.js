@@ -19,7 +19,7 @@ const clickBackdropClick = event => {
   }
 };
 
-export const openModal = (productId, color) => { // 🔹 ИЗМЕНЕНО — добавил color
+export const openModal = (productId, color) => { 
   currentProductId = productId;
   currentColor = color;
   
@@ -34,8 +34,8 @@ export const closeModal = () => {
   document.body.style.overflow = '';
   window.removeEventListener('keydown', clickEscPress);
   refs.productModal.removeEventListener('click', clickBackdropClick);
-  currentProductId = null;  // 🔹 ИЗМЕНЕНО
-  currentColor = null;      // 🔹 ИЗМЕНЕНО
+  currentProductId = null;  
+  currentColor = null;      
 };
 
 refs.modalCloseBtn.addEventListener('click', closeModal);
@@ -46,7 +46,7 @@ export async function onProductModalClick(event) {
 
   const card = detailBtn.closest('.furniture-list-render-item');
   const productId = card?.dataset.id;
-  const color = card?.dataset.color || null; // 🔹 ИЗМЕНЕНО — читаем цвет из карточки
+  const color = card?.dataset.color || null; 
 
   if (!productId) return;
 
@@ -65,7 +65,7 @@ export async function onProductModalClick(event) {
 
 
   renderProductModal(product);
-  openModal(productId, color); // 🔹 ИЗМЕНЕНО — передаем ID и цвет в openModal
+  openModal(productId, color); 
 }
 
 refs.furnitureList.addEventListener('click', onProductModalClick);
@@ -78,7 +78,7 @@ document.addEventListener("click", event => {
   const selectedProductId = currentProductId;
   const selectedCurrentColor = GetSelectedColor();
   closeModal(); 
-  openOrderModal(selectedProductId, selectedCurrentColor); // 🔹 ИЗМЕНЕНО — передаем ID и цвет из текущей модалки
+  openOrderModal(selectedProductId, selectedCurrentColor);
 });
 
 function GetSelectedColor () {
