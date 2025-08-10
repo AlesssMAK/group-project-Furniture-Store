@@ -1,5 +1,6 @@
 import "./js/header-menu.js";
 import "./js/furniture-list.js";
+import "./js/popular-products.js";
 import "./js/faq.js";
 import "./js/feedback";
 import "./js/furniture-details-modal";
