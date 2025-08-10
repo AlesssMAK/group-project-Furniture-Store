@@ -30,18 +30,6 @@
     margin: 0;
 }
 
-.about-image {
-    width: 100%;
-    max-width: 400px;
-}
-
-.about-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
 @media screen and (min-width: 1440px) {
     .about-us-section {
         padding: 80px 0;
@@ -70,10 +58,6 @@
         font-size: 18px;
     }
 
-    .about-image {
-        flex: 1;
-        max-width: 600px;
-    }
 }
 
 @media screen and (min-width: 768px) {
