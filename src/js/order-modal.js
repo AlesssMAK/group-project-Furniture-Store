@@ -32,7 +32,6 @@ export function openOrderModal(productId, color) {
 }
 
 function closeModalOrder() {
-  console.log("ok");
   
   // orderModal.style.display = "none";
   orderModal.classList.remove("is-open");
@@ -40,7 +39,7 @@ function closeModalOrder() {
   window.removeEventListener('keydown', clickEscPress);
  orderModal.removeEventListener('click', clickBackdropClick);
   
-  // 🆕 ДОБАВЛЕНО — очистка сохранённых значений
+
   selectedProductId = null;
   selectedColor = null;
 }
@@ -74,13 +73,11 @@ async function sendOrder(event) {
     return;
   }
 
-    // 🔧 ИЗМЕНЕНО — корректные границы длины комментария
   if (comment.length < 5 || comment.length > 64) {
     iziToast.warning({ message: 'Коментар має бути від 5 до 64 символів' });
     return;
   }
 
-  // 🆕 ДОБАВЛЕНО — сбор данных для POST-запроса
   const orderData = {
     email,
     phone: digitsOnly,
@@ -90,15 +87,12 @@ async function sendOrder(event) {
   };
 
   try {
-    // 🆕 ДОБАВЛЕНО — попытка отправить заказ
     
     await createOrder(orderData);
 
     closeModalOrder();
     formModalOrder.reset();
   } catch (error) {
-    // 🆕 ДОБАВЛЕНО — обработка ошибок
-    // iziToast.error({ message: "Помилка при надсиланні замовлення. Спробуйте ще раз." });
-    // console.error("Order submission failed:", error);
+    iziToast.error({ message: "Помилка при надсиланні замовлення. Спробуйте ще раз." });
   }
 }
