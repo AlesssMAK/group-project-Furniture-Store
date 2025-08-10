@@ -179,6 +179,11 @@
   .order-modal-btn {
     width: 196px;
   }
+
+  .order-modal-btn:hover,
+  .order-modal-btn:focus {
+    opacity: 0.5;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
