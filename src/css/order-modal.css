@@ -39,10 +39,6 @@
   transform: translate(-50%, -50%) scale(0.8);
 }
 
-/* .no-scroll {
-  overflow: hidden;
-} */
-
 .modal-window-close-order-btn {
   width: 32px;
   height: 32px;
@@ -118,7 +114,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-
   border-radius: 100px;
   padding: 10px 24px;
   width: 100%;
@@ -153,7 +148,7 @@
   line-height: 1.6;
   color: rgba(8, 12, 9, 0.6);
   margin-bottom: 24px;
-
+  resize: none;
   background: rgba(8, 12, 9, 0.05);
   outline: transparent;
   transition: all 0.8s ease 0s;
@@ -185,6 +180,11 @@
   .order-modal-btn {
     width: 196px;
   }
+
+  .order-modal-btn:hover,
+  .order-modal-btn:focus {
+    opacity: 0.5;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -203,11 +203,6 @@
   .modal-window-close-order-btn:hover {
     opacity: 0.5;
   }
-
-  /* .modal-window-close-order-btn:hover .modal-window-close-svg,
-  .modal-window-close-order-btn:focus .modal-window-close-svg {
-    fill: #ffffff;
-  } */
 
   .order-modal-btn:focus,
   .order-modal-btn:focus {

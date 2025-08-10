@@ -5,26 +5,86 @@ const mobileLinks = mobileMenu.querySelectorAll('a');
 const buyBtns = document.querySelectorAll('.btn-buy, .btn-buy-mobile'); 
 const body = document.body;
 
+// const clickEscPress = event => {
+//   if (event.code === 'Escape') {
+//     closeModal();
+//   }
+// };
+
+// const clickBackdropClick = event => {
+//   if (event.target === mobileMenu) {
+//     closeModal();
+//   }
+// };
+
+// export const openMenu = () => { 
+//   console.log("open");
+  
+//   mobileMenu.classList.add('is-open');
+//   document.body.style.overflow = 'hidden';
+//   window.addEventListener('keydown', clickEscPress);
+//   mobileMenu.addEventListener('click', clickBackdropClick);
+// };
+
+// export const closeMenu = () => {
+//   console.log("close");
+//   mobileMenu.classList.remove('is-open');
+//   document.body.style.overflow = '';
+//   window.removeEventListener('keydown', clickEscPress);
+//   mobileMenu.removeEventListener('click', clickBackdropClick);     
+// };
+
+
+
+
+// burgerBtn.addEventListener('click', openMenu);
+// closeBtn.addEventListener('click', closeMenu);
+
+
+
+
+const clickEscPress = event => {
+  if (event.code === 'Escape') {
+    closeMenu();
+  }
+};
+
+const clickBackdropClick = event => {
+  if (event.target === mobileMenu) {
+    closeMenu();
+  }
+};
+
+
+
+
+
+
+
+
+
 function openMenu() {
-  mobileMenu.classList.add('open');
-  mobileMenu.setAttribute('aria-hidden', 'false');
+  mobileMenu.classList.add('is-open');
   burgerBtn.setAttribute('aria-expanded', 'true');
   body.style.overflow = 'hidden';
-  burgerBtn.focus(); // фокус на кнопку бургер (опційно)
+  window.addEventListener('keydown', clickEscPress);
+    mobileMenu.addEventListener('click', clickBackdropClick);
+  // burgerBtn.focus(); // фокус на кнопку бургер (опційно)
 }
 
 function closeMenu() {
-  mobileMenu.classList.remove('open');
-  mobileMenu.setAttribute('aria-hidden', 'true');
+  mobileMenu.classList.remove('is-open');
   burgerBtn.setAttribute('aria-expanded', 'false');
   body.style.overflow = '';
+  window.removeEventListener('keydown', clickEscPress);
+    mobileMenu.removeEventListener('click', clickBackdropClick);
   
 
-  if (document.activeElement) {
-    document.activeElement.blur();
-  }
+  // if (document.activeElement) {
+  //   document.activeElement.blur();
+  // }
  
-  body.focus({ preventScroll: true });
+  // body.focus({ preventScroll: true });
 }
 
 burgerBtn.addEventListener('click', openMenu);
