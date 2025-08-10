@@ -7,5 +7,6 @@ export const refs = {
     categoriesList: document.querySelector(".menu-list-section-iv"),
     loadMoreListBtn: document.querySelector(".btn-load-more-list"),
     orderModal: document.querySelector('.order-modal'),
+    flOneBtn: document.querySelector(".fl-one"),
 }
 
