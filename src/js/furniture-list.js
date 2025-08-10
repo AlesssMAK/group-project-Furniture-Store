@@ -65,25 +65,23 @@ export const handleLoadMoreListClick = async () => {
   }
 };
 
-
 async function loadFurnitureByCategory(category) {
   showLoader();
   const data = await fetchFurnituresByCategory(category);
   hideLoader();
 
   if (data && data.furnitures) {
-        hideLoadMoreListBtn();
+    hideLoadMoreListBtn();
     renderFurniture(data.furnitures);
   } else {
-            hideLoadMoreListBtn();
+    hideLoadMoreListBtn();
     refs.furnitureList.innerHTML = '<p>Не вдалося завантажити меблі.</p>';
   }
 }
 
 export const handleCategoryClick = async e => {
   const clickedBtn = e.target.closest('.btn-list-section-iv');
-  console.log(clickedBtn);
-  
+
   if (!clickedBtn) return;
   highlightActiveCategory(clickedBtn);
   loadFurnitureByCategory(clickedBtn.dataset.id);

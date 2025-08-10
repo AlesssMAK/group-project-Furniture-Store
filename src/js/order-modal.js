@@ -1,5 +1,5 @@
-import iziToast from "izitoast";
-import { createOrder } from "./furniture-store-api";
+import iziToast from 'izitoast';
+import { createOrder } from './furniture-store-api';
 
 const btnClose = document.querySelector('.modal-window-close-btn');
 const orderModal = document.querySelector('.order-modal');
@@ -12,37 +12,37 @@ export function openOrderModal(productId, color) {
   selectedProductId = productId;
   selectedColor = color;
 
-  orderModal.style.display = "block";
-  orderModal.classList.add("is-open");
-  document.body.style.overflow = "hidden";
-  document.body.classList.add("no-scroll");
+  orderModal.style.display = 'block';
+  orderModal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  document.body.classList.add('no-scroll');
 }
 
 function closeModalOrder() {
-  orderModal.style.display = "none";
-  orderModal.classList.remove("is-open");
-  document.body.classList.remove("no-scroll");
- 
+  orderModal.style.display = 'none';
+  orderModal.classList.remove('is-open');
+  document.body.classList.remove('no-scroll');
+
   // 🆕 ДОБАВЛЕНО — очистка сохранённых значений
   selectedProductId = null;
   selectedColor = null;
 }
- console.log(formModalOrder); // должен быть не null
-btnClose.addEventListener("click", closeModalOrder);
 
-btnClose.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
+btnClose.addEventListener('click', closeModalOrder);
+
+btnClose.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
     closeModalOrder();
   }
 });
 
-orderModal.addEventListener("click", (event) => {
+orderModal.addEventListener('click', event => {
   if (event.target === orderModal) {
     closeModalOrder();
   }
 });
 
-formModalOrder.addEventListener("submit", sendOrder);
+formModalOrder.addEventListener('submit', sendOrder);
 
 async function sendOrder(event) {
   event.preventDefault();
@@ -68,7 +68,7 @@ async function sendOrder(event) {
     return;
   }
 
-    // 🔧 ИЗМЕНЕНО — корректные границы длины комментария
+  // 🔧 ИЗМЕНЕНО — корректные границы длины комментария
   if (comment.length < 5 || comment.length > 64) {
     iziToast.warning({ message: 'Коментар має бути від 5 до 64 символів' });
     return;
@@ -80,12 +80,12 @@ async function sendOrder(event) {
     phone: digitsOnly,
     comment,
     modelId: selectedProductId,
-    color: selectedColor
+    color: selectedColor,
   };
 
   try {
     // 🆕 ДОБАВЛЕНО — попытка отправить заказ
-    
+
     await createOrder(orderData);
 
     closeModalOrder();
@@ -93,6 +93,5 @@ async function sendOrder(event) {
   } catch (error) {
     // 🆕 ДОБАВЛЕНО — обработка ошибок
     // iziToast.error({ message: "Помилка при надсиланні замовлення. Спробуйте ще раз." });
-    // console.error("Order submission failed:", error);
   }
 }
