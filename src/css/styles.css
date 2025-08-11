@@ -20,6 +20,7 @@
 @import url('./header.css');
 @import url('./hero.css');
 @import url('./furniture-list.css');
+
 @import url('./about-us.css');
 @import url('./FAQ.css');
 @import url('./feedback.css');
@@ -32,4 +33,3 @@
 
 /* loader */
 @import './loader.css';
-
