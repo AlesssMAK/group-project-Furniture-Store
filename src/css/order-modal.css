@@ -30,6 +30,8 @@
   padding-left: 20px;
   padding-right: 20px;
   transition: all 0.8s ease 0s;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .order-modal-window.is-open {
