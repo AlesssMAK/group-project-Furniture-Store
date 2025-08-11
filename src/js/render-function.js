@@ -1,15 +1,11 @@
 import { refs } from './refs';
 import { setLocalProducts } from './furniture-store-api';
 
-
-
-
 import 'css-star-rating/css/star-rating.css';
-
 
 // -----------------------------------------зірки---------------------------------
 // === ОКРУГЛЕННЯ ЗА ПРАВИЛОМ ===
-export const normalizeRating = (rate) => {
+export const normalizeRating = rate => {
   const r = Math.max(0, Math.min(5, Number(rate) || 0));
   if (r >= 3.3 && r <= 3.7) return 3.5;
   if (r >= 3.8 && r <= 4.2) return 4;
@@ -17,7 +13,7 @@ export const normalizeRating = (rate) => {
 };
 
 // === Розмітка, яку очікує css-star-rating ===
-export const  starMarkup = () => {
+export const starMarkup = () => {
   return `
     <div class="star-container">
       ${Array.from({ length: 5 })
@@ -31,24 +27,16 @@ export const  starMarkup = () => {
         )
         .join('')}
     </div>`;
-}
-
-
-
-
-
+};
 
 // -----------------------------------------зірки---------------------------------
-
-
-
 
 export const renderProductModal = modalData => {
   const { name, description, images, rate, price, sizes, color, category } =
     modalData;
 
-     const rounded = normalizeRating(rate);
-  const value = Math.floor(rounded);      // 0..5
+  const rounded = normalizeRating(rate);
+  const value = Math.floor(rounded); // 0..5
   const half = rounded % 1 === 0.5;
 
   const imagesMarkup = `
@@ -86,7 +74,9 @@ export const renderProductModal = modalData => {
         <p class="gategory-text">${category.name}</p>
         <p class="product-price">${price} грн</p>
         <div
-        class="rating star-icon medium direction-ltr label-hidden ${half ? 'half' : ''} value-${value}"
+        class="rating star-icon medium direction-ltr label-hidden ${
+          half ? 'half' : ''
+        } value-${value}"
         aria-label="Рейтинг ${rounded} з 5"
       >
         <div class="label-value" aria-hidden="true">${rounded}</div>
@@ -101,13 +91,9 @@ export const renderProductModal = modalData => {
     `;
 };
 
-
-
-
 // furniture list
 
 export const renderFurniture = furnitures => {
-
   setLocalProducts(furnitures);
 
   const markup = furnitures
@@ -129,4 +115,26 @@ export const renderFurniture = furnitures => {
     .join('');
 
   refs.furnitureList.innerHTML = markup;
+};
+
+// popular products
+
+export const renderPopularProducts = ({ images, _id, type, price }) => {
+
+  const slide = document.createElement('div');
+  slide.className = 'swiper-slide';
+  slide.innerHTML = `
+  <li class="popular-products-render-item" data-id="${_id}">
+    <img class="popular-products-render-img" src="${images[0]}" alt="${type}" />
+    <h3 class="popular-products-render-title">${type}</h3>
+    <ul class="popular-products-render-color-list">
+      <li class="popular-products-render-color-list-item popular-products-render-color-list-item-current-one"></li>
+      <li class="popular-products-render-color-list-item popular-products-render-color-list-item-current-two"></li>
+      <li class="popular-products-render-color-list-item popular-products-render-color-list-item-current-three"></li>
+    </ul>
+    <p class="popular-products-render-price">${price} грн</p>
+    <button class="popular-products-render-btn" type="button">Детальніше</button>
+  </li>
+  `;
+    return slide;
 };

@@ -8,6 +8,7 @@
   visibility: hidden;
   pointer-events: none;
   transition: all 0.8s ease 0s;
+  z-index: 9999;
 }
 
 .order-modal.is-open {
