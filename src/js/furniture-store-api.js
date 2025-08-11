@@ -11,6 +11,7 @@ export const ENDPOINTS = {
   CATEGORIES: '/categories',
   ORDERS: '/orders',
   FEEDBACKS: '/feedbacks',
+  POPULARPRD: '/furnitures?type=popular',
 };
 
 // axios
@@ -153,4 +154,42 @@ export const setLocalProducts = products => {
 
 export const getLocalProductById = id => {
   return localProducts.find(p => p._id === id);
+};
+
+
+
+// popular products
+
+
+const localProductsCache = [];
+
+export function cacheProducts(products) {
+  localProductsCache.push(...products);
+}
+
+export function getPopularProductById(id) {
+  return localProductsCache.find(product => product._id === id);
+}
+
+export const fetchPopularproducts = async (page = 1)=> {
+  showLoader();
+  try {
+    const response = await api.get(ENDPOINTS.POPULARPRD, {
+      params: {
+        page,
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    iziToast.error({
+      title: 'Помилка',
+      message: 'Не вдалося завантажити меблі. Спробуйте пізніше.',
+      position: 'topRight',
+      timeout: 4000,
+    });
+    return null;
+  } finally {
+    hideLoader();
+  }
 };

@@ -1,5 +1,5 @@
 import iziToast from 'izitoast';
-import { getLocalProductById } from './furniture-store-api';
+import { getLocalProductById, getPopularProductById } from './furniture-store-api';
 import { refs } from './refs';
 import { renderProductModal } from './render-function';
 import { openOrderModal } from './order-modal'; // 🔹 ИЗМЕНЕНО — импорт из второй модалки
@@ -84,4 +84,34 @@ document.addEventListener("click", event => {
 function GetSelectedColor () {
   const selected = document.querySelector('input[name="color"]:checked');
   return selected ? selected.value : null;
+}
+
+
+
+
+refs.swiperContainer.addEventListener('click', onPopularProductClick);
+
+function onPopularProductClick(event) {
+  const detailBtn = event.target.closest('.popular-products-render-btn');
+  if (!detailBtn) return;
+
+  const card = detailBtn.closest('.popular-products-render-item');
+  const productId = card?.dataset.id;
+  // const color = card?.dataset.color || null; 
+  const color = null; 
+
+  if (!productId) return;
+
+  const product = getPopularProductById(productId);
+
+  if (!product) {
+    iziToast.error({
+      title: 'Error',
+      message: 'Товар не знайдено у кеші',
+    });
+    return;
+  }
+
+  renderProductModal(product);      
+  openModal(productId, color);       
 }
