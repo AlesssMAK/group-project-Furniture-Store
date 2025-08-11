@@ -11,9 +11,9 @@
     />
 
     <script type="module" crossorigin src="/group-project-Furniture-Store/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-DGn7RuFN.js">
-    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/vendor-Dj0nbOrW.css">
-    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-D9SP3JJ7.css">
+    <link rel="modulepreload" crossorigin href="/group-project-Furniture-Store/assets/vendor-CC0EzOv2.js">
+    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/vendor-B-K006-G.css">
+    <link rel="stylesheet" crossorigin href="/group-project-Furniture-Store/assets/index-CXadXmTg.css">
   </head>
   <body>
     <header class="header">
@@ -264,7 +264,43 @@
 
       <section class="popular-products-section">
   <div class="container">
-    <ul class="popular-products-list"></ul>
+    <h2 class="popular-products-title">Популярні товари</h2>
+    <!-- <ul class="popular-products-list-render"></ul> -->
+    
+
+        <!-- Swiper -->
+        <div class="popular-products-swiper swiper">
+          <div id="popular-products-list" class="swiper-wrapper">
+  
+          </div>
+    
+          <!-- Пагінація -->
+          <div class="pagination-container">
+            <div class="swiper-pagination"></div>
+    
+            <!-- Кнопки навігації -->
+            <div class="swiper-button-container">
+              <button
+                class="swiper-button-prev"
+                type="button"
+                aria-label="Попередній товар"
+              >
+                <svg class="arrow-icon" width="24" height="24">
+                  <use href="/group-project-Furniture-Store/assets/sprite-DGKBa4KI.svg#icon-left-arrow-alt"></use>
+                </svg>
+              </button>
+              <button
+                class="swiper-button-next"
+                type="button"
+                aria-label="Наступний товар"
+              >
+                <svg class="arrow-icon" width="24" height="24">
+                  <use href="/group-project-Furniture-Store/assets/sprite-DGKBa4KI.svg#icon-right-arrow-alt"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
   </div>
 </section>
 
