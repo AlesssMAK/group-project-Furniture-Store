@@ -2,6 +2,17 @@
   padding: 48px 0;
 }
 
+/* твій faq.css */
+.faq-section .ac .ac-trigger {
+  font: 700 18px/1.6 'Raleway', sans-serif; /* шортхендом! */
+  color: #080c09;
+}
+
+.faq-section .ac .ac-text {
+  font: 400 16px/1.6 'Raleway', sans-serif !important;
+  color: #080c09;
+}
+
 .faq-section .container {
   display: flex;
   flex-direction: column;
@@ -10,16 +21,15 @@
 }
 
 .faq-section .secondary-heading {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif !important;
   font-weight: 700;
-  font-size: 32px; 
+  font-size: 32px;
   line-height: 120%;
   letter-spacing: 1%;
   text-align: center;
-  color: #080C09;
+  color: #080c09;
   margin-bottom: 32px;
 }
-
 
 .accordion-container {
   max-width: 865px;
@@ -37,9 +47,11 @@
 }
 
 .ac-trigger {
-  font-family: 'Raleway Normal' !important;
-  font-size: 16px !important;
-  line-height: 160% !important;
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #080c09;
   padding: 0 !important;
   display: flex !important;
   justify-content: space-between;
@@ -60,14 +72,12 @@
 }
 
 .ac-text {
-  font-family: 'Raleway Normal' !important;
+  font-family: 'Raleway', sans-serif !important;
   font-weight: 400 !important;
   font-size: 16px !important;
   line-height: 160% !important;
   padding: 0 !important;
   margin: 0 !important;
-
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -84,10 +94,8 @@
   }
 }
 
-
 @media only screen and (min-width: 1440px) {
   .faq-section {
     padding: 80px 0;
   }
 }
-
